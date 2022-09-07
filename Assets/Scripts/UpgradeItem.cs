@@ -17,6 +17,6 @@ public class UpgradeItem : MonoBehaviour
     public void Buy()
     {
         UpgradeEvent?.Invoke();
-        upgradeType.nextLevel();
+        upgradeType.NextLevel();
     }
 }

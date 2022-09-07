@@ -28,7 +28,7 @@ namespace Scriptable_Objects
             set => costIncrement = value;
         }
 
-        public void nextLevel()
+        public void NextLevel()
         {
             Level++;
         }
