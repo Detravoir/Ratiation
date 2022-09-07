@@ -5,10 +5,13 @@ using UnityEngine;
 public class Rat : MonoBehaviour
 {
 
-    public int tier, good_Poop, bad_Poop;
+    public int tier;
+    bool isDragged, hasDestination;
 
-    bool isDragged;
-    // Start is called before the first frame update
+    Vector3 destination, offset;
+
+    [SerializeField] private float range;
+
     void Start()
     {
         Set_Rat();
@@ -17,38 +20,94 @@ public class Rat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Check if the rat is not being dragged
+        if (!isDragged)
+        {
+            //Check if the rat has a destination
+            if (hasDestination)
+            {
+                //Check if the destination is far away enough
+                if (Vector3.Distance(transform.position, destination) > .5f)
+                {
+                    //Move to the destination
+                    transform.position = Vector3.MoveTowards(transform.position, destination, Random.Range(1f, 3f) * Time.deltaTime);
+                }
+                else
+                {
+                    hasDestination = false;
+                }
+            }
+            else
+            {
+                destination = new Vector2(Random.Range(GameManager.gameManager.wall.bounds.extents.x, (GameManager.gameManager.wall.bounds.extents.x * -1)), Random.Range(GameManager.gameManager.wall.bounds.extents.y, (GameManager.gameManager.wall.bounds.extents.y * -1)));
+                hasDestination = true;
+            }
+        }
     }
 
     public void Set_Rat()
     {
         GetComponent<SpriteRenderer>().sprite = GameManager.gameManager.rat_Sprites[tier];
+    }
 
-        bad_Poop = tier / 5;
-        if(tier != 0)
-        {
-            good_Poop = bad_Poop + 1;
-        }
-        else
-        {
-            good_Poop = bad_Poop;
-        }
+    public void Evolve()
+    {
+        tier++;
+        Set_Rat();
     }
 
     private void OnMouseDown()
     {
-
+        offset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
     }
 
     private void OnMouseDrag()
     {
         isDragged = true;
 
-        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10)) + offset;
     }
 
     private void OnMouseUp()
     {
         isDragged = false;
+        Debug.Log(Physics2D.OverlapCircle(transform.position, range));
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Check if the rat is being dragged
+        if (isDragged)
+        {
+            //Check if the dragged rat collides with the tag "Rat"
+            if (collision.tag == "Rat")
+            {
+                //Check if the collision between rats both have the same tier
+                if (collision.GetComponent<Rat>().tier == tier)
+                {
+                    Evolve();
+
+                    Destroy(collision.gameObject);
+                }
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //Check if the rat is being dragged
+        if (isDragged)
+        {
+            //Check if the dragged rat collides with the tag "Rat"
+            if (collision.tag == "Rat")
+            {
+                //Check if the collision between rats both have the same tier
+                if (collision.GetComponent<Rat>().tier == tier)
+                {
+                    Evolve();
+                    Destroy(collision.gameObject);
+                }
+            }
+        }
     }
 }
