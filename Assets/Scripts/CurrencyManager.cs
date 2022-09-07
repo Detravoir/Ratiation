@@ -10,6 +10,11 @@ public class CurrencyManager : MonoBehaviour
     
     private static decimal _totalRatPower = 0;
 
+    public static decimal TotalRatPower
+    {
+        get => _totalRatPower;
+    }
+
     private void Awake()
     {
         StartCoroutine(TaxRats());
