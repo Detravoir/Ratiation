@@ -7,15 +7,15 @@ public class CurrencyManager : MonoBehaviour
 {
     //event for Rats to subscribe to.
     public static Func<decimal> TaxRatsEvent;
-
-    private decimal _totalRatPower = 0;
+    
+    private static decimal _totalRatPower = 0;
 
     private void Awake()
     {
         StartCoroutine(TaxRats());
     }
 
-    private IEnumerator TaxRats()
+    private static IEnumerator TaxRats()
     {
         while (true)
         {
@@ -26,6 +26,13 @@ public class CurrencyManager : MonoBehaviour
         }
     }
     
-    //TODO: Deduct RatPower method.
-    //TODO: Add RatPower method
+    public static void DeductRatPower(decimal amount)
+    {
+        _totalRatPower -= amount;
+    }
+    
+    public static void AddRatPower(decimal amount)
+    {
+        _totalRatPower += amount;
+    }
 }
