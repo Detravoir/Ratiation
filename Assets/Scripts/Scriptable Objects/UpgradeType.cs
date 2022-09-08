@@ -6,31 +6,19 @@ namespace Scriptable_Objects
     public class UpgradeType : ScriptableObject
     {
         [SerializeField] private int level = 0;
-        public int Level
-        {
-            get => level;
-            private set => level = value;
-        }
         
-        [SerializeField]
-        private decimal baseCost = 1;
-        public decimal BaseCost
-        {
-            get => baseCost;
-            private set => baseCost = value;
-        }
-        [SerializeField]
-        private decimal costIncrement = 2;
-
-        public decimal CostIncrement
-        {
-            get => costIncrement;
-            set => costIncrement = value;
-        }
+        [SerializeField] private decimal baseCost = 1;
+        
+        [SerializeField] private decimal costIncrement = 1.25M;
+        
+        //accessors.
+        public int Level { get => level; }
+        public decimal BaseCost { get => baseCost; }
+        public decimal CostIncrement { get => costIncrement; }
 
         public void NextLevel()
         {
-            Level++;
+            level++;
         }
     }
 }
