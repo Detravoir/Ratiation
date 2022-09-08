@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Rat : MonoBehaviour
 {
@@ -11,6 +13,18 @@ public class Rat : MonoBehaviour
     Vector3 destination, offset;
 
     [SerializeField] private float range;
+
+    private void Awake()
+    {
+        //Subscribe GenerateRatPower() to the TaxRatsEvent of the CurrencyManager.
+        CurrencyManager.TaxRatsEvent += GenerateRatPower;
+    }
+
+    private void OnDisable()
+    {
+        //Unsubscribe when the object gets disabled. Otherwise a null reference error will be thrown if the event is fired.
+        CurrencyManager.TaxRatsEvent -= GenerateRatPower;
+    }
 
     void Start()
     {
@@ -54,6 +68,12 @@ public class Rat : MonoBehaviour
     {
         tier++;
         Set_Rat();
+    }
+
+    //method used for calculating how much RatPower is being generated.
+    private void GenerateRatPower(){
+        //Add rat power to the pool of total rat power.
+        CurrencyManager.AddRatPower(10);
     }
 
     private void OnMouseDown()
