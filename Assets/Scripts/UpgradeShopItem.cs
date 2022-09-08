@@ -11,7 +11,6 @@ public class UpgradeShopItem : MonoBehaviour
     [SerializeField] private UpgradeType upgradeType;   //scriptable object for content fill.
     public decimal Cost { get; private set; }           //used to hold the cost of the next level.
 
-    
     public event Action UpgradeEvent;                   //Event for all dependent objects of the upgrade.
 
     private void Awake()
@@ -22,9 +21,11 @@ public class UpgradeShopItem : MonoBehaviour
     //Buy gets called when the UI button gets clicked.
     public void Buy()
     {
-        //TODO: Check if there is enough rat power.
-        UpgradeEvent?.Invoke();
+        //Check if cost is not higher then current amount of RatPower.
+        if (Cost > CurrencyManager.TotalRatPower) return;
+        CurrencyManager.DeductRatPower(Cost);
         upgradeType.NextLevel();
+        UpgradeEvent?.Invoke();
         CalculateCost();
     }
 
