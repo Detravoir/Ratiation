@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
-
-    public int tier;
-    bool isDragged, hasDestination;
+    public int tier = 0;
+    private SpriteRenderer spriteRenderer;
+    bool hasDestination;
+    public DragRats dragratsscript;
 
     Vector3 destination, offset;
 
-    [SerializeField] private float range;
-
-    void Start()
+    private void Awake()
     {
-        Set_Rat();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        dragratsscript = GetComponent<DragRats>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Check if the rat is not being dragged
-        if (!isDragged)
+        if (!dragratsscript.isDragged)
         {
             //Check if the rat has a destination
             if (hasDestination)
@@ -54,60 +53,6 @@ public class Rat : MonoBehaviour
     {
         tier++;
         Set_Rat();
-    }
-
-    private void OnMouseDown()
-    {
-        offset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
-    }
-
-    private void OnMouseDrag()
-    {
-        isDragged = true;
-
-        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10)) + offset;
-    }
-
-    private void OnMouseUp()
-    {
-        isDragged = false;
-        Debug.Log(Physics2D.OverlapCircle(transform.position, range));
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Check if the rat is being dragged
-        if (isDragged)
-        {
-            //Check if the dragged rat collides with the tag "Rat"
-            if (collision.tag == "Rat")
-            {
-                //Check if the collision between rats both have the same tier
-                if (collision.GetComponent<Rat>().tier == tier)
-                {
-                    Evolve();
-
-                    Destroy(collision.gameObject);
-                }
-            }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        //Check if the rat is being dragged
-        if (isDragged)
-        {
-            //Check if the dragged rat collides with the tag "Rat"
-            if (collision.tag == "Rat")
-            {
-                //Check if the collision between rats both have the same tier
-                if (collision.GetComponent<Rat>().tier == tier)
-                {
-                    Evolve();
-                    Destroy(collision.gameObject);
-                }
-            }
-        }
+        //spriteRenderer.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
     }
 }
