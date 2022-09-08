@@ -70,11 +70,10 @@ public class Rat : MonoBehaviour
         Set_Rat();
     }
 
-    //method used for calculating how much RatPower is being genated.
-    private decimal GenerateRatPower()
-    {
-        Debug.Log("Generating Rat Power");
-        return 10;
+    //method used for calculating how much RatPower is being generated.
+    private void GenerateRatPower(){
+        //Add rat power to the pool of total rat power.
+        CurrencyManager.AddRatPower(10);
     }
 
     private void OnMouseDown()

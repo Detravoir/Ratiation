@@ -6,10 +6,10 @@ using UnityEngine;
 public class CurrencyManager : MonoBehaviour
 {
     //event for Rats to subscribe to.
-    public static Func<decimal> TaxRatsEvent;
-    
-    private static decimal _totalRatPower = 0;
+    public static Action TaxRatsEvent;
 
+    private static Coroutine _taxRatCoroutine;
+    private static decimal _totalRatPower = 0;
     public static decimal TotalRatPower
     {
         get => _totalRatPower;
@@ -17,7 +17,12 @@ public class CurrencyManager : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(TaxRats());
+        _taxRatCoroutine = StartCoroutine(TaxRats());
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(_taxRatCoroutine);
     }
 
     private static IEnumerator TaxRats()
@@ -25,8 +30,6 @@ public class CurrencyManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(10);
-            
-            //TODO: Add up the return of TaxRatsEvent.
             TaxRatsEvent?.Invoke();
         }
     }
