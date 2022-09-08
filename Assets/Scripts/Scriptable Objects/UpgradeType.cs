@@ -13,16 +13,16 @@ namespace Scriptable_Objects
         }
         
         [SerializeField]
-        private float baseCost = 1f;
-        public float BaseCost
+        private decimal baseCost = 1;
+        public decimal BaseCost
         {
             get => baseCost;
             private set => baseCost = value;
         }
         [SerializeField]
-        private float costIncrement = 2;
+        private decimal costIncrement = 2;
 
-        public float CostIncrement
+        public decimal CostIncrement
         {
             get => costIncrement;
             set => costIncrement = value;
