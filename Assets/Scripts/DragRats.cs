@@ -7,7 +7,7 @@ public class DragRats : MonoBehaviour
     public Camera cam;
 
     public Rat currentlyDraggingRat;
-    public float ratCheckRadius = 2f;
+    public float ratCheckRadius = 0.5f;
     public bool isDragged = false;
 
     private void Update()
