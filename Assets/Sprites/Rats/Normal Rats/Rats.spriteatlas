@@ -38,13 +38,13 @@ SpriteAtlas:
       padding: 4
       blockOffset: 1
       allowAlphaSplitting: 0
-      enableRotation: 1
+      enableRotation: 0
       enableTightPacking: 0
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 102900000, guid: 301f99d10f13f48d0a714e72ae335ad2, type: 3}
+    - {fileID: 102900000, guid: c30ead6b7bfce4cb28fe925089198ffd, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -52,6 +52,7 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 76c616c38be57497786faf8bb02bb335, type: 3}
   - {fileID: 21300000, guid: 69d568843b5944d7abae053bd5bdbeca, type: 3}
+  - {fileID: 21300000, guid: 052a963640e054e409b365330f89e362, type: 3}
   - {fileID: 21300000, guid: bc5afc486680d4fc2a669b432c266b23, type: 3}
   - {fileID: 21300000, guid: f4485dd87a1114cb8adeef12dfe14d70, type: 3}
   - {fileID: 21300000, guid: 22d739593434746ca84729398907ad22, type: 3}
@@ -62,6 +63,7 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - (3)AdultRat
   - (6)3EyedRat
+  - (9)SkellyRat
   - (10)GhostRat
   - (4)RadioactiveRat
   - (1)Pinkie

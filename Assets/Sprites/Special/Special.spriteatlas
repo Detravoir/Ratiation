@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StoneSlabs
+  m_Name: Special
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -32,24 +32,17 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 21300000, guid: 5e90cb8d5f440433cbfbaba4bbd303ec, type: 3}
-    - {fileID: 21300000, guid: 1934ead4bd721462b8b8e76d6aec38f6, type: 3}
-    - {fileID: 21300000, guid: 9836876467c444042a48be539755688b, type: 3}
-    - {fileID: 21300000, guid: f6d9c227fa1ef4cb7a6c125ee131db2d, type: 3}
+    - {fileID: 102900000, guid: e6ee412ee25104eaca3c4de6610c8bea, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 9836876467c444042a48be539755688b, type: 3}
-  - {fileID: 21300000, guid: 1934ead4bd721462b8b8e76d6aec38f6, type: 3}
-  - {fileID: 21300000, guid: f6d9c227fa1ef4cb7a6c125ee131db2d, type: 3}
-  - {fileID: 21300000, guid: 5e90cb8d5f440433cbfbaba4bbd303ec, type: 3}
+  - {fileID: 21300000, guid: 29fe3771eb3104b228c62ac281a2e8a5, type: 3}
+  - {fileID: 21300000, guid: 7a3b7c5dc18ee48cf8f468d6216a4ec7, type: 3}
   m_PackedSpriteNamesToIndex:
-  - StoneBarUp
-  - SettingsPopupPanel
-  - UpgradeStone
-  - StoneBarDown
+  - Racoon eyes
+  - Racoon
   m_RenderDataMap: {}
-  m_Tag: StoneSlabs
+  m_Tag: Special
   m_IsVariant: 0

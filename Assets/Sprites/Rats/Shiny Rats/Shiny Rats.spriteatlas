@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Backgrounds
+  m_Name: Shiny Rats
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -44,24 +44,33 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 21300000, guid: d8f90dbe4a9b849dda6ab1292e5c9fb6, type: 3}
-    - {fileID: 21300000, guid: 2c465a95f5dee41f3b29f5b68e35baaa, type: 3}
-    - {fileID: 21300000, guid: 92c40f945bd684526be26b1a92446d1f, type: 3}
-    - {fileID: 21300000, guid: be866aa02278641518a36360bbebdc2f, type: 3}
+    - {fileID: 102900000, guid: fd1b50882ea3b440d9f3de726304455a, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: be866aa02278641518a36360bbebdc2f, type: 3}
-  - {fileID: 21300000, guid: 92c40f945bd684526be26b1a92446d1f, type: 3}
-  - {fileID: 21300000, guid: 2c465a95f5dee41f3b29f5b68e35baaa, type: 3}
-  - {fileID: 21300000, guid: d8f90dbe4a9b849dda6ab1292e5c9fb6, type: 3}
+  - {fileID: 21300000, guid: e5ff8ae24de21443aa9e63a82de78dc0, type: 3}
+  - {fileID: 21300000, guid: c39748436cb34489fb39cdc5c8f3ea6b, type: 3}
+  - {fileID: 21300000, guid: 15177334b16fa4027b08a7012ae932fa, type: 3}
+  - {fileID: 21300000, guid: 88ce3e35c27924253bf10d620eb429ed, type: 3}
+  - {fileID: 21300000, guid: e3bd5cb6cc246442ca63ba244c259d98, type: 3}
+  - {fileID: 21300000, guid: 4f501f179f86d4384b398744aae6d5b3, type: 3}
+  - {fileID: 21300000, guid: 20b6c2f88590b4bfa836fdd1fe749e66, type: 3}
+  - {fileID: 21300000, guid: 98751dfbaca1248ec916c0e9c85409ff, type: 3}
+  - {fileID: 21300000, guid: a27cd9bc1dfdb45e0ac105f03d28b807, type: 3}
+  - {fileID: 21300000, guid: f6a0bafff93e646458bd66754c1d5b88, type: 3}
   m_PackedSpriteNamesToIndex:
-  - ShopChainsBackground
-  - ShopBackground
-  - Shadow
-  - HomepageBackground
+  - (8)ShinyBuff
+  - (3)ShinyAdult
+  - (7)ShinySiamese
+  - (6)Shiny3Eyed
+  - (1)ShinyPinkie
+  - (4)ShinyRadioactive
+  - (5)ShinyMutated
+  - (2)ShinyBaby
+  - (10)ShinyGhost
+  - (9)SkellyRat
   m_RenderDataMap: {}
-  m_Tag: Backgrounds
+  m_Tag: Shiny Rats
   m_IsVariant: 0
