@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings:
     - serializedVersion: 3
       m_BuildTarget: DefaultTexturePlatform
-      m_MaxTextureSize: 1024
+      m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
       m_TextureFormat: -1
       m_TextureCompression: 1
@@ -67,6 +67,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: f797841e39b0a48d5b4cc4b920d9329c, type: 3}
   - {fileID: 21300000, guid: 6b973efea09c7460db9ca4f5c45cc9cd, type: 3}
   - {fileID: 21300000, guid: 5b372f5fa7ebb4a58a14716b1680b0e4, type: 3}
+  - {fileID: 21300000, guid: 8f6106cf010314beb98b1211f0a3fea1, type: 3}
   m_PackedSpriteNamesToIndex:
   - ToggleChecked
   - HowToButton
@@ -85,6 +86,7 @@ SpriteAtlas:
   - StatsButton
   - ShopBuyButton
   - UpgradeButton
+  - IndexBox
   m_RenderDataMap: {}
   m_Tag: ButtonSpriteAtlas
   m_IsVariant: 0
