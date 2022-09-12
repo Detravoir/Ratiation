@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Rat : MonoBehaviour
 {
@@ -18,6 +20,15 @@ public class Rat : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         dragratsscript = GetComponent<DragRats>();
+        
+        //Subscribe GenerateRatPower() to the TaxRatsEvent of the CurrencyManager.
+        CurrencyManager.TaxRatsEvent += GenerateRatPower;
+    }
+
+    private void OnDisable()
+    {
+        //Unsubscribe when the object gets disabled. Otherwise a null reference error will be thrown if the event is fired.
+        CurrencyManager.TaxRatsEvent -= GenerateRatPower;
     }
 
     void Start()
@@ -73,5 +84,11 @@ public class Rat : MonoBehaviour
         tier++;
         Set_Rat();
         //spriteRenderer.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+    }
+
+    //method used for calculating how much RatPower is being generated.
+    private void GenerateRatPower(){
+        //Add rat power to the pool of total rat power.
+        CurrencyManager.AddRatPower(10);
     }
 }
