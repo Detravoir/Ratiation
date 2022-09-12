@@ -1,15 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Scriptable_Objects;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Rat : MonoBehaviour
 {
-    public int tier = 0;
+    public int tier = 1;
     private SpriteRenderer spriteRenderer;
     bool hasDestination;
-    public DragRats dragratsscript;
+    private DragRats dragratsscript;
+    [SerializeField] private RatType _type;
 
     Vector3 destination, offset;
 
@@ -18,11 +20,10 @@ public class Rat : MonoBehaviour
 
     private void Awake()
     {
+        CurrencyManager.TaxRatsEvent += GenerateRatPower; //Subscribe GenerateRatPower() to the TaxRatsEvent of the CurrencyManager.
         spriteRenderer = GetComponent<SpriteRenderer>();
-        dragratsscript = GetComponent<DragRats>();
-        
-        //Subscribe GenerateRatPower() to the TaxRatsEvent of the CurrencyManager.
-        CurrencyManager.TaxRatsEvent += GenerateRatPower;
+        dragratsscript = DragRats.Instance;
+        Set_Rat();
     }
 
     private void OnDisable()
@@ -38,7 +39,6 @@ public class Rat : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(timer);
         timer -= Time.deltaTime;
         //Check if the rat is not being dragged
         if (!dragratsscript.isDragged)
@@ -76,7 +76,8 @@ public class Rat : MonoBehaviour
 
     public void Set_Rat()
     {
-        GetComponent<SpriteRenderer>().sprite = GameManager.gameManager.rat_Sprites[tier];
+        Debug.Log(tier.ToString());
+        spriteRenderer.sprite = _type.RatSpritesAtlas.GetSprite(tier.ToString());
     }
 
     public void Evolve()

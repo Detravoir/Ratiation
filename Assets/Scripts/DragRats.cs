@@ -1,14 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DragRats : MonoBehaviour
 {
+    public static DragRats Instance { get; private set; }
     public Camera cam;
 
     public Rat currentlyDraggingRat;
     public float ratCheckRadius = 0.5f;
     public bool isDragged = false;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Update()
     {
