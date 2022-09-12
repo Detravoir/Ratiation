@@ -9,7 +9,7 @@ public class UpgradeShopItem : MonoBehaviour
 {
     
     [SerializeField] private UpgradeType upgradeType;   //scriptable object for content fill.
-    public decimal Cost { get; private set; }           //used to hold the cost of the next level.
+    public double Cost { get; private set; }           //used to hold the cost of the next level.
 
     public event Action UpgradeEvent;                   //Event for all dependent objects of the upgrade.
 
