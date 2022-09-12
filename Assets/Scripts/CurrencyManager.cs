@@ -9,8 +9,8 @@ public class CurrencyManager : MonoBehaviour
     public static Action TaxRatsEvent;
 
     private static Coroutine _taxRatCoroutine;
-    private static decimal _totalRatPower = 0;
-    public static decimal TotalRatPower
+    private static double _totalRatPower = 0;
+    public static double TotalRatPower
     {
         get => _totalRatPower;
     }
@@ -34,12 +34,12 @@ public class CurrencyManager : MonoBehaviour
         }
     }
     
-    public static void DeductRatPower(decimal amount)
+    public static void DeductRatPower(double amount)
     {
         _totalRatPower -= amount;
     }
     
-    public static void AddRatPower(decimal amount)
+    public static void AddRatPower(double amount)
     {
         _totalRatPower += amount;
     }

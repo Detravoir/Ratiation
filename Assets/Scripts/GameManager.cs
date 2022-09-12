@@ -10,20 +10,12 @@ public class GameManager : MonoBehaviour
     
     public GameObject rat_Prefab;
 
-    public string[] rat_Names;
-    public Sprite[] rat_Sprites, poop_Sprites;
-
     public float Timer = 0;
 
     void Awake()
     {
         gameManager = this;
         
-    }
-
-    void Start()
-    {
-
     }
 
     void Update()

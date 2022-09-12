@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8702689841445719066}
   - component: {fileID: 6220754513332569115}
   - component: {fileID: 1388614294345871929}
-  - component: {fileID: 206996030912795095}
   m_Layer: 0
   m_Name: rat
   m_TagString: Rat
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c9e90bcf82bab3443a7f80351ee98a51, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +84,7 @@ SpriteRenderer:
   m_Size: {x: 4.7, y: 3.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8702689841445719066
@@ -100,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf5e4121da101b4eb972ce0a33c0e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tier: 0
-  dragratsscript: {fileID: 206996030912795095}
+  tier: 1
+  dragratsscript: {fileID: 0}
+  _type: {fileID: 11400000, guid: cbd7da585b24b6f43bc15e62d81ec564, type: 2}
 --- !u!50 &6220754513332569115
 Rigidbody2D:
   serializedVersion: 4
@@ -149,19 +149,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.9650953, y: 1.5181136}
   m_EdgeRadius: 0
---- !u!114 &206996030912795095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4804409890504352664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81a9936d89b14c5438b55f9dc34044cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  currentlyDraggingRat: {fileID: 0}
-  ratCheckRadius: 1
-  isDragged: 0
