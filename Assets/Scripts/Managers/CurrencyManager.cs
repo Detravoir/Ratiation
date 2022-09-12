@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
 {
     //event for Rats to subscribe to.
     public static Action TaxRatsEvent;
-
+    
     private static Coroutine _taxRatCoroutine;
     private static double _totalRatPower = 0;
     public static double TotalRatPower
