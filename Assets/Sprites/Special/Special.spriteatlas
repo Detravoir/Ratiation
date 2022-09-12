@@ -39,10 +39,20 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 29fe3771eb3104b228c62ac281a2e8a5, type: 3}
+  - {fileID: 21300000, guid: 4d214481ae0bd43d7ae9e12e1fdde95b, type: 3}
+  - {fileID: 21300000, guid: b0be94c25381a45849239f6a9ce4148b, type: 3}
+  - {fileID: 21300000, guid: 3316e0a5993504139ac7b3cd230ed658, type: 3}
   - {fileID: 21300000, guid: 7a3b7c5dc18ee48cf8f468d6216a4ec7, type: 3}
+  - {fileID: 21300000, guid: 286f1c3ed152d4cb2b00d84a8a3a1c66, type: 3}
+  - {fileID: 21300000, guid: 6fa717fef0b32478396f735768442be9, type: 3}
   m_PackedSpriteNamesToIndex:
   - Racoon eyes
+  - hand
+  - HowToRat
+  - HowToPinkie
   - Racoon
+  - arrow
+  - Sparklyrat
   m_RenderDataMap: {}
   m_Tag: Special
   m_IsVariant: 0
