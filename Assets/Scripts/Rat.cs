@@ -76,20 +76,22 @@ public class Rat : MonoBehaviour
 
     public void Set_Rat()
     {
-        Debug.Log(tier.ToString());
         spriteRenderer.sprite = _type.RatSpritesAtlas.GetSprite(tier.ToString());
     }
 
     public void Evolve()
     {
+        //check if tier up isn't greater than maxtiers.
+        //TODO: This doesn't cancel the destruction of the other rat.
+        if (tier + 1 > _type.MaxTiers) return;
         tier++;
         Set_Rat();
-        //spriteRenderer.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
     }
 
     //method used for calculating how much RatPower is being generated.
     private void GenerateRatPower(){
         //Add rat power to the pool of total rat power.
-        CurrencyManager.AddRatPower(10);
+        var powerGenerated = _type.BasePowerPerMinute * tier / 6;
+        CurrencyManager.AddRatPower(powerGenerated);
     }
 }
