@@ -6,16 +6,21 @@ using Random = UnityEngine.Random;
 
 public class Rat : MonoBehaviour
 {
-
-    public int tier;
-    bool isDragged, hasDestination;
+    public int tier = 0;
+    private SpriteRenderer spriteRenderer;
+    bool hasDestination;
+    public DragRats dragratsscript;
 
     Vector3 destination, offset;
 
-    [SerializeField] private float range;
+    float timer;
+    float walkTime;
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        dragratsscript = GetComponent<DragRats>();
+        
         //Subscribe GenerateRatPower() to the TaxRatsEvent of the CurrencyManager.
         CurrencyManager.TaxRatsEvent += GenerateRatPower;
     }
@@ -28,23 +33,24 @@ public class Rat : MonoBehaviour
 
     void Start()
     {
-        Set_Rat();
+        timer = Random.Range(1f, 6f);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        Debug.Log(timer);
+        timer -= Time.deltaTime;
         //Check if the rat is not being dragged
-        if (!isDragged)
-        {
+        if (!dragratsscript.isDragged)
+        {          
             //Check if the rat has a destination
             if (hasDestination)
             {
                 //Check if the destination is far away enough
                 if (Vector3.Distance(transform.position, destination) > .5f)
-                {
+                {                   
                     //Move to the destination
-                    transform.position = Vector3.MoveTowards(transform.position, destination, Random.Range(1f, 3f) * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, destination, Random.Range(1f, 3f) * Time.deltaTime);                   
                 }
                 else
                 {
@@ -53,10 +59,19 @@ public class Rat : MonoBehaviour
             }
             else
             {
-                destination = new Vector2(Random.Range(GameManager.gameManager.wall.bounds.extents.x, (GameManager.gameManager.wall.bounds.extents.x * -1)), Random.Range(GameManager.gameManager.wall.bounds.extents.y, (GameManager.gameManager.wall.bounds.extents.y * -1)));
-                hasDestination = true;
+                if (timer <= 0)
+                {
+                    GetNewRandomDestination();
+                    timer = Random.Range(1f, 6f);
+                }                        
             }
         }
+    }
+
+    public void GetNewRandomDestination()
+    {
+        destination = new Vector2(Random.Range(GameManager.gameManager.wall.bounds.extents.x, (GameManager.gameManager.wall.bounds.extents.x * -1)), Random.Range(GameManager.gameManager.wall.bounds.extents.y, (GameManager.gameManager.wall.bounds.extents.y * -1)));
+        hasDestination = true;
     }
 
     public void Set_Rat()
@@ -68,66 +83,12 @@ public class Rat : MonoBehaviour
     {
         tier++;
         Set_Rat();
+        //spriteRenderer.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
     }
 
     //method used for calculating how much RatPower is being generated.
     private void GenerateRatPower(){
         //Add rat power to the pool of total rat power.
         CurrencyManager.AddRatPower(10);
-    }
-
-    private void OnMouseDown()
-    {
-        offset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
-    }
-
-    private void OnMouseDrag()
-    {
-        isDragged = true;
-
-        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10)) + offset;
-    }
-
-    private void OnMouseUp()
-    {
-        isDragged = false;
-        Debug.Log(Physics2D.OverlapCircle(transform.position, range));
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Check if the rat is being dragged
-        if (isDragged)
-        {
-            //Check if the dragged rat collides with the tag "Rat"
-            if (collision.tag == "Rat")
-            {
-                //Check if the collision between rats both have the same tier
-                if (collision.GetComponent<Rat>().tier == tier)
-                {
-                    Evolve();
-
-                    Destroy(collision.gameObject);
-                }
-            }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        //Check if the rat is being dragged
-        if (isDragged)
-        {
-            //Check if the dragged rat collides with the tag "Rat"
-            if (collision.tag == "Rat")
-            {
-                //Check if the collision between rats both have the same tier
-                if (collision.GetComponent<Rat>().tier == tier)
-                {
-                    Evolve();
-                    Destroy(collision.gameObject);
-                }
-            }
-        }
     }
 }
