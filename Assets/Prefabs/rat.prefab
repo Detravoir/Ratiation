@@ -100,8 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tier: 1
-  dragratsscript: {fileID: 0}
-  _type: {fileID: 11400000, guid: cbd7da585b24b6f43bc15e62d81ec564, type: 2}
+  type: {fileID: 11400000, guid: cbd7da585b24b6f43bc15e62d81ec564, type: 2}
 --- !u!50 &6220754513332569115
 Rigidbody2D:
   serializedVersion: 4

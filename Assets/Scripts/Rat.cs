@@ -11,8 +11,8 @@ public class Rat : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     bool hasDestination;
     private DragRats dragratsscript;
-    [SerializeField] private RatType _type;
-
+    [SerializeField] public RatType type;
+    
     Vector3 destination, offset;
 
     float timer;
@@ -76,14 +76,14 @@ public class Rat : MonoBehaviour
 
     public void Set_Rat()
     {
-        spriteRenderer.sprite = _type.RatSpritesAtlas.GetSprite(tier.ToString());
+        spriteRenderer.sprite = type.RatSpritesAtlas.GetSprite(tier.ToString());
     }
 
     public void Evolve()
     {
         //check if tier up isn't greater than maxtiers.
         //TODO: This doesn't cancel the destruction of the other rat.
-        if (tier + 1 > _type.MaxTiers) return;
+        if (tier + 1 > type.MaxTiers) return;
         tier++;
         Set_Rat();
     }
@@ -91,7 +91,7 @@ public class Rat : MonoBehaviour
     //method used for calculating how much RatPower is being generated.
     private void GenerateRatPower(){
         //Add rat power to the pool of total rat power.
-        var powerGenerated = _type.BasePowerPerMinute * tier / 6;
+        var powerGenerated = type.BasePowerPerMinute * tier / 6;
         CurrencyManager.AddRatPower(powerGenerated);
     }
 }
