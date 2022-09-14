@@ -41,7 +41,7 @@ public class Rat : MonoBehaviour
     {
         timer -= Time.deltaTime;
         //Check if the rat is not being dragged
-        if (!dragratsscript.isDragged)
+        if (!dragratsscript.IsDragged)
         {          
             //Check if the rat has a destination
             if (hasDestination)
