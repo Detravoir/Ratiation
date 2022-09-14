@@ -14,37 +14,68 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UpgradeType spawnRateUpgrade;
     [SerializeField] private UpgradeType spawnChanceUpgrade;
 
-    public float Timer = 0;
+    public List<Rat> spawnedRats;
+    public int maxRats = 16;
+          
+    public float ratSpawnTime = 10f;
+    private float ratSpawnTimer = 0f;
+
+    public int currentRatTier = 1;
 
     void Awake()
     {
         gameManager = this;
+        ratSpawnTimer = ratSpawnTime;
+    }
+
+    public void StartSpawnRats(List<int> ratAmountPerTier)
+    {
+        for (int tierNumber = 0; tierNumber < ratAmountPerTier.Count; tierNumber++)
+        {
+            for(int j = 0; j < ratAmountPerTier[tierNumber]; j++)
+            {
+                Spawn_Rat(tierNumber);
+            }
+        }
     }
 
     void Update()
     {
-        Timer -= Time.deltaTime;
+        ratSpawnTimer -= Time.deltaTime;
         //If the timer hits 0 run Spawn_Rat function
-        if (Timer <= 0f)
+        if (ratSpawnTimer < 0f)
         {
-            Spawn_Rat();
-            Timer = 10f - spawnRateUpgrade.Level; //decrease by a second per level.
-        }
+            if(spawnedRats.Count < maxRats)
+            {
+                Spawn_Rat(currentRatTier);             
+            }
+            ratSpawnTimer = ratSpawnTime - spawnRateUpgrade.Level; //decrease by a second per level.
+        }     
     }
 
-    public void Spawn_Rat()
+    public void Spawn_Rat(int tier)
     {
         //Pick a location to spawn the rat
         Vector2 position = new Vector2(Random.Range(wall.bounds.extents.x, (wall.bounds.extents.x * -1)), Random.Range(wall.bounds.extents.y, (wall.bounds.extents.y * -1)));
         
         //Spawn a rat
-        Rat rat = Instantiate(ratPrefab, position, Quaternion.identity, null).GetComponent<Rat>();
-        
+        Rat newRat = Instantiate(ratPrefab, position, Quaternion.identity, null).GetComponent<Rat>();
+    
+        //newRat.tier = tier;
+      
         //See if its a shiney.
-        if (Random.Range(0f, 100f) > 100 - 10 * spawnChanceUpgrade.Level)
-        {
-            rat.type= ratTypes[1];
-            rat.Set_Rat();
-        }
+       if (Random.Range(0f, 100f) > 100 - 10 * spawnChanceUpgrade.Level)
+       {
+            newRat.type = ratTypes[1];
+            newRat.Set_Rat();
+       }
+
+        spawnedRats.Add(newRat);
+    }
+
+    public void RemoveRat(Rat rat)
+    {
+        spawnedRats.Remove(rat);
+        Destroy(rat.gameObject);
     }
 }

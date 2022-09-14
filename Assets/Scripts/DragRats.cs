@@ -12,6 +12,8 @@ public class DragRats : MonoBehaviour
     public float ratCheckRadius = 0.5f;
     public bool isDragged = false;
 
+    public GameManager gamemanager;
+
     private void Awake()
     {
         Instance = this;
@@ -29,7 +31,7 @@ public class DragRats : MonoBehaviour
         if (thisRat.tier == otherRat.tier)
         {
             thisRat.Evolve();
-            Destroy(otherRat.gameObject);
+            gamemanager.RemoveRat(otherRat);
         }
     }
 
