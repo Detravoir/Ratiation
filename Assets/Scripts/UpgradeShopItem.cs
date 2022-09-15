@@ -34,7 +34,7 @@ public class UpgradeShopItem : MonoBehaviour
     //Calculates the cost of the next level.
     private void CalculateCost()
     {
-        Cost = upgradeType.BaseCost * (upgradeType.Level + 1) * upgradeType.CostIncrement;
+        Cost = Math.Round(upgradeType.BaseCost * Math.Pow(upgradeType.CostIncrement, upgradeType.Level + 1));
         buyButtonText.text = Cost.ToString();
     }
 }

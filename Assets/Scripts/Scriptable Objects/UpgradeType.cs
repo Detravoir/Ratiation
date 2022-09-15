@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Scriptable_Objects
 {
@@ -9,12 +10,12 @@ namespace Scriptable_Objects
         
         [SerializeField] private double baseCost = 1;
         
-        [SerializeField] private double costIncrement = 1.25;
+        [FormerlySerializedAs("costIncrement")] [SerializeField] private double costIncrementCoefficient = 1.25;
         
         //accessors.
         public int Level { get => level; }
         public double BaseCost { get => baseCost; }
-        public double CostIncrement { get => costIncrement; }
+        public double CostIncrement { get => costIncrementCoefficient; }
 
         public void NextLevel()
         {
