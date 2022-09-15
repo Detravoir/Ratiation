@@ -94,7 +94,7 @@ public class Rat : MonoBehaviour
     //method used for calculating how much RatPower is being generated.
     private void GenerateRatPower(){
         //Add rat power to the pool of total rat power.
-        var powerGenerated = type.BasePowerPerMinute * tier / 6;
+        var powerGenerated = (Math.Pow(type.BasePowerPerMinute, tier) + 0.5 * tier) * 10;
         CurrencyManager.AddRatPower(powerGenerated);
     }
 }
