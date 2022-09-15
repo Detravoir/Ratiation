@@ -5,6 +5,7 @@ using UnityEngine;
 public class SaveGame : MonoBehaviour
 {
     public GameManager gamemanager;
+    public CurrencyManager currencymanager;
     public List<int> ratAmountPerTier;
 
     
@@ -58,6 +59,11 @@ public class SaveGame : MonoBehaviour
             int ratTier = gamemanager.spawnedRats[i].tier;
             ratAmountPerTier[ratTier]++;
         }
+    }
+
+    private void SaveTotalRatPower() 
+    {
+        int ratpower = currencymanager.TotalRatPower();
     }
 
     private void SaveRatAmountPerTier()

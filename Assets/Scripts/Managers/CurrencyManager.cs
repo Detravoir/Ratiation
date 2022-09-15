@@ -10,7 +10,7 @@ public class CurrencyManager : MonoBehaviour
     public static Action TaxRatsEvent;
     
     private static Coroutine _taxRatCoroutine;
-    private static double _totalRatPower = 0;
+    public static double _totalRatPower = 0;
     public static double TotalRatPower
     {
         get => _totalRatPower;
