@@ -61,10 +61,11 @@ public class GameManager : MonoBehaviour
         //Spawn a rat
         Rat newRat = Instantiate(ratPrefab, position, Quaternion.identity, null).GetComponent<Rat>();
     
-        //newRat.tier = tier;
-      
+        newRat.tier = tier;
+        newRat.Set_Rat();
+
         //See if its a shiney.
-       if (Random.Range(0f, 100f) > 100 - 10 * spawnChanceUpgrade.Level)
+        if (Random.Range(0f, 100f) > 100 - 10 * spawnChanceUpgrade.Level)
        {
             newRat.type = ratTypes[1];
             newRat.Set_Rat();

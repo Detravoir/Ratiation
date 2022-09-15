@@ -10,7 +10,12 @@ public class SaveGame : MonoBehaviour
     
     private void Awake()
     {
-        //Load();
+        Load();
+    }
+
+    void OnApplicationQuit()
+    {
+        Save();
     }
 
     private void Start()
@@ -47,28 +52,19 @@ public class SaveGame : MonoBehaviour
             ratAmountPerTier[i] = 0;
         }
 
-        int totalAmountOfRats = ratSpawner.spawnedRats.Count;
-        for (int i = 0; i < totalAmountOfRats; i++)
-        {
-            int ratTier = ratSpawner.spawnedRats[i].ratTier;
-            ratAmountPerTier[ratTier]++;
-        }
-    }
-
-    public void ProcessRatAmountPerTier()
-    {
-        // reset list first
-        for (int i = 0; i < ratAmountPerTier.Count; i++)
-        {
-            ratAmountPerTier[i] = 0;
-        }
-
-
         int totalAmountOfRats = gamemanager.spawnedRats.Count;
         for (int i = 0; i < totalAmountOfRats; i++)
         {
             int ratTier = gamemanager.spawnedRats[i].tier;
             ratAmountPerTier[ratTier]++;
+        }
+    }
+
+    private void SaveRatAmountPerTier()
+    {
+        for (int i = 0; i < ratAmountPerTier.Count; i++)
+        {
+            PlayerPrefs.SetInt("AmountOfRatsInTier" + i.ToString(), ratAmountPerTier[i]);
         }
     }
 }
