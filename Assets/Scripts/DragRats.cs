@@ -2,15 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DragRats : MonoBehaviour
 {
     public static DragRats Instance { get; private set; }
-    public Camera cam;
+    [SerializeField] private UserInput userInput;
+    [SerializeField] private float ratCheckRadius = 0.5f;
 
-    public Rat currentlyDraggingRat;
-    public float ratCheckRadius = 0.5f;
-    public bool isDragged = false;
+    private Rat _currentlyDraggingRat;
+    public bool IsDragged { get; private set; } = false;
 
     public GameManager gamemanager;
 
@@ -21,9 +22,9 @@ public class DragRats : MonoBehaviour
 
     private void Update()
     {
-        MouseDown();
-        MouseDrag();
-        MouseUp();
+        InputDown();
+        InputDrag();
+        InputUp();
     }
 
     private void CompareRats(Rat thisRat, Rat otherRat)
@@ -35,55 +36,54 @@ public class DragRats : MonoBehaviour
         }
     }
 
-    private void MouseDown()
+    private void InputDown()
     {
-        if (Input.GetMouseButtonDown(0)) // potentieel issues met touch
+        if (userInput.Down())
         {
-            RaycastHit2D hit = Physics2D.GetRayIntersection(cam.ScreenPointToRay(Input.mousePosition));
+            RaycastHit2D hit = userInput.GetHit();
             if (hit.collider != null)
             {
                 Rat hitRat = hit.collider.GetComponent<Rat>();
                 if (hitRat != null)
                 {
-                    currentlyDraggingRat = hitRat;
+                    _currentlyDraggingRat = hitRat;
                 }
             }
             else
             {
-                currentlyDraggingRat = null;
+                _currentlyDraggingRat = null;
             }
         }
     }
 
-    private void MouseDrag()
+    private void InputDrag()
     {
-        if (Input.GetMouseButton(0) && currentlyDraggingRat != null) // potentieel issues met touch
+        if (userInput.Pressed() && _currentlyDraggingRat != null)
         {
-            isDragged = true;
-            Vector3 newRatDragPosition = cam.ScreenToWorldPoint(Input.mousePosition);
+            IsDragged = true;
+            Vector3 newRatDragPosition = userInput.GetPosition();
             newRatDragPosition.z = 0;
-            currentlyDraggingRat.transform.position = newRatDragPosition;
+            _currentlyDraggingRat.transform.position = newRatDragPosition;
         }
         else
         {
-            isDragged = false;
+            IsDragged = false;
         }
     }
 
-    private void MouseUp()
+    private void InputUp()
     {
-        if (Input.GetMouseButtonUp(0) && currentlyDraggingRat != null) // potentieel issues met touch
+        if (userInput.Up() && _currentlyDraggingRat != null)
         {
             List<Collider2D> allColliders = new List<Collider2D>();
-            allColliders.AddRange(Physics2D.OverlapCircleAll(cam.ScreenToWorldPoint(Input.mousePosition), ratCheckRadius));
-            allColliders.Remove(currentlyDraggingRat.GetComponent<Collider2D>());
+            allColliders.AddRange(Physics2D.OverlapCircleAll(_currentlyDraggingRat.transform.position, ratCheckRadius));
+            allColliders.Remove(_currentlyDraggingRat.GetComponent<Collider2D>());
             if (allColliders.Count > 0)
             {
                 Rat otherRat = allColliders[0].GetComponent<Rat>();
-                CompareRats(currentlyDraggingRat, otherRat);
+                CompareRats(_currentlyDraggingRat, otherRat);
             }
-
-            currentlyDraggingRat = null;
+            _currentlyDraggingRat = null;
         }
     }
 }

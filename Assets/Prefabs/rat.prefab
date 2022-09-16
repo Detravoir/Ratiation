@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 672539715233009408}
   - component: {fileID: 6975927010149988677}
   - component: {fileID: 8702689841445719066}
-  - component: {fileID: 6220754513332569115}
-  - component: {fileID: 1388614294345871929}
+  - component: {fileID: 2842714553562975666}
   m_Layer: 0
   m_Name: rat
   m_TagString: Rat
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.7, y: 3.6}
+  m_Size: {x: 4.41, y: 3.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -99,30 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf5e4121da101b4eb972ce0a33c0e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tier: 1
   type: {fileID: 11400000, guid: cbd7da585b24b6f43bc15e62d81ec564, type: 2}
---- !u!50 &6220754513332569115
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4804409890504352664}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &1388614294345871929
+  tier: 1
+--- !u!61 &2842714553562975666
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,19 +110,19 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2255379, y: -0.19083953}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.7, y: 3.6}
-    newSize: {x: 4.7, y: 3.6}
+    oldSize: {x: 4.41, y: 3.94}
+    newSize: {x: 4.41, y: 3.94}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.9650953, y: 1.5181136}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
