@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,11 @@ using UnityEngine;
 public class SaveGame : MonoBehaviour
 {
     public GameManager gamemanager;
-    public CurrencyManager currencymanager;
     public List<int> ratAmountPerTier;
+    public static double totalratpower;
 
-    
+    public static Action InformationLoaded;
+
     private void Awake()
     {
         Load();
@@ -34,6 +36,7 @@ public class SaveGame : MonoBehaviour
     {
         ProcessRatAmountPerTier();
         SaveRatAmountPerTier();
+        SaveTotalRatPower();
     }
 
     [ContextMenu("Load Game")]
@@ -43,6 +46,11 @@ public class SaveGame : MonoBehaviour
         {
             ratAmountPerTier[i] = PlayerPrefs.GetInt("AmountOfRatsInTier" + i.ToString());
         }
+
+        string ratpower = PlayerPrefs.GetString("TotalRatPower");
+        totalratpower = System.Convert.ToDouble(ratpower);
+
+        InformationLoaded.Invoke();
     }
 
     public void ProcessRatAmountPerTier()
@@ -63,7 +71,9 @@ public class SaveGame : MonoBehaviour
 
     private void SaveTotalRatPower() 
     {
-        int ratpower = currencymanager.TotalRatPower();
+        totalratpower = CurrencyManager.TotalRatPower;
+
+        PlayerPrefs.SetString("TotalRatPower", totalratpower.ToString());
     }
 
     private void SaveRatAmountPerTier()

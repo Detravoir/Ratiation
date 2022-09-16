@@ -19,11 +19,18 @@ public class CurrencyManager : MonoBehaviour
     private void Awake()
     {
         _taxRatCoroutine = StartCoroutine(TaxRats());
+        SaveGame.InformationLoaded += LoadRatPower;
+    }
+
+    private void LoadRatPower()
+    {
+        _totalRatPower = SaveGame.totalratpower;
     }
 
     private void OnDisable()
     {
         StopCoroutine(_taxRatCoroutine);
+        SaveGame.InformationLoaded -= LoadRatPower;
     }
 
     private static IEnumerator TaxRats()
