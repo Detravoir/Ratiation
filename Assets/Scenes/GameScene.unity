@@ -2608,7 +2608,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0509429317d9bd54494d8bf56936d6eb, type: 2}
   spawnRateUpgrade: {fileID: 11400000, guid: b0e33bef26445964f8a658b773a9420e, type: 2}
   spawnChanceUpgrade: {fileID: 11400000, guid: b2444642c3250b1488768be5b6e37d70, type: 2}
-  Timer: 0
+  spawnedRats: []
+  maxRats: 16
+  ratSpawnTime: 10
+  currentRatTier: 1
 --- !u!4 &167525828
 Transform:
   m_ObjectHideFlags: 0
@@ -6445,6 +6448,7 @@ MonoBehaviour:
   currentlyDraggingRat: {fileID: 0}
   ratCheckRadius: 0.5
   isDragged: 0
+  gamemanager: {fileID: 167525827}
 --- !u!81 &521240962
 AudioListener:
   m_ObjectHideFlags: 0
@@ -23638,6 +23642,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076159115}
   m_CullTransparentMesh: 1
+--- !u!1 &2080517108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2080517110}
+  - component: {fileID: 2080517109}
+  m_Layer: 0
+  m_Name: SaveGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2080517109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080517108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699cd3ea8c0705f4f95f04e981a29983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamemanager: {fileID: 167525827}
+  ratAmountPerTier: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+--- !u!4 &2080517110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080517108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43008876, y: 1.109052, z: -0.9506288}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2081394356
 GameObject:
   m_ObjectHideFlags: 0
