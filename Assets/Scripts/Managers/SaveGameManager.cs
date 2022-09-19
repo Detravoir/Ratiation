@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Scriptable_Objects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SaveGameManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class SaveGameManager : MonoBehaviour
     public GameManager gamemanager;
     public List<int> ratAmountPerTier;
     public static double totalratpower;
-    [SerializeField] private List<CanBeBought> ShopItems;
+    [FormerlySerializedAs("ShopItems")] [SerializeField] private List<CanBeBought> shopItems;
 
     private void Awake()
     {
@@ -54,7 +55,9 @@ public class SaveGameManager : MonoBehaviour
 
         string ratpower = PlayerPrefs.GetString("TotalRatPower");
         totalratpower = System.Convert.ToDouble(ratpower);
-
+        
+        LoadCanBeBoughtItems();
+        
         InformationLoaded.Invoke();
     }
 
@@ -91,17 +94,17 @@ public class SaveGameManager : MonoBehaviour
 
     private void SaveRatShopAndUpgrades()
     {
-        foreach (var item in ShopItems)
+        foreach (var item in shopItems)
         {
-            Debug.Log(item.name);
             PlayerPrefs.SetInt(item.name, item.TimesBought);
         }
     }
 
-    public static int LoadRatShopOrUpgrade(String name)
+    public void LoadCanBeBoughtItems()
     {
-        var amountBought = PlayerPrefs.GetInt(name);
-        Debug.Log(name + ": " + amountBought);
-        return PlayerPrefs.GetInt(name);
+        foreach (var item in shopItems)
+        {
+            item.TimesBought = PlayerPrefs.GetInt(item.name);
+        }
     }
 }
