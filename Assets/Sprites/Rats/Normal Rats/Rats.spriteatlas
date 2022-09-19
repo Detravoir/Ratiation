@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings:
     - serializedVersion: 3
       m_BuildTarget: DefaultTexturePlatform
-      m_MaxTextureSize: 4096
+      m_MaxTextureSize: 8192
       m_ResizeAlgorithm: 0
       m_TextureFormat: -1
       m_TextureCompression: 1
@@ -50,26 +50,66 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: e0ab2d20c739c459b823c57a4fac7f77, type: 3}
+  - {fileID: 21300000, guid: 0a767e60270e246cf8baec119520adb4, type: 3}
+  - {fileID: 21300000, guid: 82c889e08bd2f4334b352ef5b59d81de, type: 3}
+  - {fileID: 21300000, guid: dcfbd32126c654dacb52b07807893538, type: 3}
+  - {fileID: 21300000, guid: 67e76a81af7f748e2b560a90d010a31a, type: 3}
+  - {fileID: 21300000, guid: a8f9eb816c27248b69691e0f3eed129f, type: 3}
+  - {fileID: 21300000, guid: 1b7b69c1ba592460798ff0bfc0c2d4ab, type: 3}
+  - {fileID: 21300000, guid: 3ed370421d2b04a19b3ea002dfe4d226, type: 3}
+  - {fileID: 21300000, guid: 5dfcba721dc5f4378a0184cbfc136a89, type: 3}
+  - {fileID: 21300000, guid: 4b60c28265b304215a3f3e7e15e91bdb, type: 3}
+  - {fileID: 21300000, guid: 10c11bd22eec34b7c8fc4bec80dc1dc3, type: 3}
+  - {fileID: 21300000, guid: 1e3b33f2209a2471a9cf9c569e02d3e3, type: 3}
   - {fileID: 21300000, guid: 76c616c38be57497786faf8bb02bb335, type: 3}
+  - {fileID: 21300000, guid: a5d665148d23b44c79e7d41b8fc547e6, type: 3}
   - {fileID: 21300000, guid: 69d568843b5944d7abae053bd5bdbeca, type: 3}
-  - {fileID: 21300000, guid: 052a963640e054e409b365330f89e362, type: 3}
+  - {fileID: 21300000, guid: a80037e41674a4215a75fae6602486a1, type: 3}
+  - {fileID: 21300000, guid: d4539cf4773de4c2499984936a0d053e, type: 3}
+  - {fileID: 21300000, guid: 3c713ce5673154b7ab2868c2498a2a6a, type: 3}
+  - {fileID: 21300000, guid: 1f6dd2f52204d4121b152e3c2ab4e855, type: 3}
+  - {fileID: 21300000, guid: 4d3e6c6652f454a14aaa088fa362fa5a, type: 3}
+  - {fileID: 21300000, guid: 8b0e1408dc8fc43708b0ab0021474a5e, type: 3}
   - {fileID: 21300000, guid: bc5afc486680d4fc2a669b432c266b23, type: 3}
   - {fileID: 21300000, guid: f4485dd87a1114cb8adeef12dfe14d70, type: 3}
-  - {fileID: 21300000, guid: 22d739593434746ca84729398907ad22, type: 3}
+  - {fileID: 21300000, guid: 7361ac195c8884473bca4c48e04d2100, type: 3}
+  - {fileID: 21300000, guid: aa462bab39653480f904362d1648611d, type: 3}
+  - {fileID: 21300000, guid: 3c195dcb23026407597c3bba69f4ca71, type: 3}
+  - {fileID: 21300000, guid: f144031cbb2694a1a9215d2b0266f35b, type: 3}
   - {fileID: 21300000, guid: 1945427dc9bd3450eb7e27f2d3c4f72d, type: 3}
-  - {fileID: 21300000, guid: 7c16379d0dd6b475cbde0f9b5607a91d, type: 3}
-  - {fileID: 21300000, guid: f5b2d5ae6621b45c7bedbf6073f7feaa, type: 3}
+  - {fileID: 21300000, guid: 2ddaad9ef1e734ebfbb100f5440fe9bc, type: 3}
   - {fileID: 21300000, guid: dc9de6fe1df3d40f7884419313206394, type: 3}
   m_PackedSpriteNamesToIndex:
+  - 21
+  - 25
+  - 7
+  - 24
+  - 22
+  - 20
+  - 12
+  - 13
+  - 15
+  - 29
+  - 28
+  - 11
   - 3
+  - 27
   - 6
-  - 9
+  - 2
+  - 16
+  - 17
+  - 26
+  - 30
+  - 1
   - 10
   - 4
-  - 1
+  - 23
+  - 18
+  - 9
+  - 19
   - 5
-  - 2
-  - 7
+  - 14
   - 8
   m_RenderDataMap: {}
   m_Tag: Rats
