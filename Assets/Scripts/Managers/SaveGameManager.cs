@@ -11,13 +11,14 @@ public class SaveGameManager : MonoBehaviour
     public static Action InformationLoaded;
 
     //Fields
-    public GameManager gamemanager;
+    private RatManager _ratManager;
     public List<int> ratAmountPerTier;
     public static double totalratpower;
     [FormerlySerializedAs("ShopItems")] [SerializeField] private List<CanBeBought> shopItems;
 
     private void Awake()
     {
+        _ratManager = RatManager.Instance;
         Load();
     }
 
@@ -28,7 +29,7 @@ public class SaveGameManager : MonoBehaviour
 
     private void Start()
     {
-        gamemanager.StartSpawnRats(ratAmountPerTier);
+        _ratManager.StartSpawnRats(ratAmountPerTier);
     }
 
     public void Update()
@@ -69,10 +70,10 @@ public class SaveGameManager : MonoBehaviour
             ratAmountPerTier[i] = 0;
         }
 
-        int totalAmountOfRats = gamemanager.spawnedRats.Count;
+        int totalAmountOfRats = _ratManager.spawnedRats.Count;
         for (int i = 0; i < totalAmountOfRats; i++)
         {
-            int ratTier = gamemanager.spawnedRats[i].tier;
+            int ratTier = _ratManager.spawnedRats[i].tier;
             ratAmountPerTier[ratTier]++;
         }
     }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Scriptable_Objects;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class RatManager : MonoBehaviour
 {
 
-    public static GameManager gameManager;
+    public static RatManager Instance;
     public SpriteRenderer wall;
     
     [SerializeField] private GameObject ratPrefab;
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        gameManager = this;
+        Instance = this;
         ratSpawnTimer = ratSpawnTime;
     }
 

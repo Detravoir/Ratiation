@@ -72,7 +72,7 @@ public class Rat : MonoBehaviour
 
     public void GetNewRandomDestination()
     {
-        destination = new Vector2(Random.Range(GameManager.gameManager.wall.bounds.extents.x, (GameManager.gameManager.wall.bounds.extents.x * -1)), Random.Range(GameManager.gameManager.wall.bounds.extents.y, (GameManager.gameManager.wall.bounds.extents.y * -1)));
+        destination = new Vector2(Random.Range(RatManager.Instance.wall.bounds.extents.x, (RatManager.Instance.wall.bounds.extents.x * -1)), Random.Range(RatManager.Instance.wall.bounds.extents.y, (RatManager.Instance.wall.bounds.extents.y * -1)));
         _hasDestination = true;
     }
 
