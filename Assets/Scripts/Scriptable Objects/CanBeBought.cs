@@ -8,7 +8,10 @@ namespace Scriptable_Objects
         [SerializeField] protected int timesBought = 0;
         [SerializeField] protected double baseCost = 20;
         [SerializeField] protected double incrementCostFactor = 1.25;
-        public int TimesBought { get => timesBought; }
+        
+        
+
+        public int TimesBought { get => timesBought; set => timesBought = value; }
         public double BaseCost { get => baseCost; }
         public double IncrementCostFactor { get => incrementCostFactor; }
         public abstract void HasBeenBought();

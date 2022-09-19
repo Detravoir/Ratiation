@@ -6,6 +6,7 @@ namespace Scriptable_Objects
     {
         [SerializeField] private int tier = 1;
         [SerializeField] private RatType type;
+
         public override void HasBeenBought()
         {
             timesBought++;
