@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3783587885263972978}
-  - component: {fileID: 4975568824381993066}
   - component: {fileID: 3121382540809442746}
   m_Layer: 0
   m_Name: TouchInput
@@ -33,21 +32,6 @@ Transform:
   m_Father: {fileID: 3123195020709897526}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4975568824381993066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2957532046482426126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 --- !u!114 &3121382540809442746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,3 +221,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userInput: {fileID: 3121382540809442746}
   ratCheckRadius: 0.5
+  gamemanager: {fileID: 0}
