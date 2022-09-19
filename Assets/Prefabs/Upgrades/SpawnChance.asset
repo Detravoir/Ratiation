@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: SpawnChance
   m_EditorClassIdentifier: 
   level: 0
+  baseCost: 50
+  costIncrementCoefficient: 1.5

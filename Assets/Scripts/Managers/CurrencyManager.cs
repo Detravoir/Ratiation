@@ -10,7 +10,7 @@ public class CurrencyManager : MonoBehaviour
     public static Action TaxRatsEvent;
     
     private static Coroutine _taxRatCoroutine;
-    private static double _totalRatPower = 0;
+    public static double _totalRatPower = 0;
     public static double TotalRatPower
     {
         get => _totalRatPower;
@@ -19,11 +19,18 @@ public class CurrencyManager : MonoBehaviour
     private void Awake()
     {
         _taxRatCoroutine = StartCoroutine(TaxRats());
+        SaveGameManager.InformationLoaded += LoadRatPower;
+    }
+
+    private void LoadRatPower()
+    {
+        _totalRatPower = SaveGameManager.totalratpower;
     }
 
     private void OnDisable()
     {
         StopCoroutine(_taxRatCoroutine);
+        SaveGameManager.InformationLoaded -= LoadRatPower;
     }
 
     private static IEnumerator TaxRats()
