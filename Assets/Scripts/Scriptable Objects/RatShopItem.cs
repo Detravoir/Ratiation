@@ -11,8 +11,9 @@ namespace Scriptable_Objects
 
         public override void HasBeenBought()
         {
+            Debug.Log("Fired!");
             timesBought++;
-            //TODO: Spawn a rat of correct type.
+            RatManager.Instance.SpawnBoughtRat(type, tier);
         }
     }
 }

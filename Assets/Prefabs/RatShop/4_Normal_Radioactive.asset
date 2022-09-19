@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4_Normal_Radioactive
   m_EditorClassIdentifier: 
   timesBought: 0
-  baseCost: 20
+  baseCost: 260
   incrementCostFactor: 1.25
   tier: 4
   type: {fileID: 11400000, guid: cbd7da585b24b6f43bc15e62d81ec564, type: 2}

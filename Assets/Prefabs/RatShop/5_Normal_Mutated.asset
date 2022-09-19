@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 5_Normal_Mutated
   m_EditorClassIdentifier: 
   timesBought: 0
-  baseCost: 20
+  baseCost: 570
   incrementCostFactor: 1.25
   tier: 5
   type: {fileID: 11400000, guid: cbd7da585b24b6f43bc15e62d81ec564, type: 2}

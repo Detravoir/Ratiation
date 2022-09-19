@@ -74,6 +74,21 @@ public class RatManager : MonoBehaviour
         spawnedRats.Add(newRat);
     }
 
+    public void SpawnBoughtRat(RatType type, int tier)
+    {
+        //Pick a location to spawn the rat
+        Vector2 position = new Vector2(Random.Range(wall.bounds.extents.x, (wall.bounds.extents.x * -1)), Random.Range(wall.bounds.extents.y, (wall.bounds.extents.y * -1)));
+        
+        //Spawn a rat
+        Rat newRat = Instantiate(ratPrefab, position, Quaternion.identity, null).GetComponent<Rat>();
+
+        newRat.type = type;
+        newRat.tier = tier;
+        newRat.Set_Rat();
+        
+        spawnedRats.Add(newRat);
+    }
+
     public void RemoveRat(Rat rat)
     {
         spawnedRats.Remove(rat);
