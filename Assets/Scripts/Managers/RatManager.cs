@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Scriptable_Objects;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class RatManager : MonoBehaviour
 {
@@ -9,72 +12,43 @@ public class RatManager : MonoBehaviour
     public static RatManager Instance;
     public SpriteRenderer wall;
     
+    [FormerlySerializedAs("ratSpawnTime")] [SerializeField] private float ratSpawnInterval = 10f;
     [SerializeField] private GameObject ratPrefab;
     [SerializeField] private RatType[] ratTypes;
     [SerializeField] private UpgradeType spawnRateUpgrade;
     [SerializeField] private UpgradeType spawnChanceUpgrade;
 
     public List<Rat> spawnedRats;
-    public int maxRats = 16;
-          
-    public float ratSpawnTime = 10f;
-    private float ratSpawnTimer = 0f;
+    [SerializeField] private int maxRats = 16;
 
-    public int currentRatTier = 1;
-
+    private Coroutine _spawnRatCoroutine;
+    
     void Awake()
     {
         Instance = this;
-        ratSpawnTimer = ratSpawnTime;
+        _spawnRatCoroutine = StartCoroutine(SpawnRatTimer());
     }
 
-    public void StartSpawnRats(List<int> ratAmountPerTier)
+    private void OnDisable()
     {
-        for (int tierNumber = 0; tierNumber < ratAmountPerTier.Count; tierNumber++)
+        StopCoroutine(_spawnRatCoroutine);
+    }
+    
+    private IEnumerator SpawnRatTimer()
+    {
+        while (true)
         {
-            for(int j = 0; j < ratAmountPerTier[tierNumber]; j++)
+            if (spawnedRats.Count < maxRats)
             {
-                Spawn_Rat(tierNumber);
-            }
+                var type = Random.Range(0f, 100f) > 100 - 10 * spawnChanceUpgrade.Level ? ratTypes[1] : ratTypes[0];
+                var tier = 1;
+                SpawnRat(type, tier);
+            };
+            yield return new WaitForSeconds(ratSpawnInterval - spawnRateUpgrade.Level);
         }
     }
 
-    void Update()
-    {
-        ratSpawnTimer -= Time.deltaTime;
-        //If the timer hits 0 run Spawn_Rat function
-        if (ratSpawnTimer < 0f)
-        {
-            if(spawnedRats.Count < maxRats)
-            {
-                Spawn_Rat(currentRatTier);             
-            }
-            ratSpawnTimer = ratSpawnTime - spawnRateUpgrade.Level; //decrease by a second per level.
-        }     
-    }
-
-    public void Spawn_Rat(int tier)
-    {
-        //Pick a location to spawn the rat
-        Vector2 position = new Vector2(Random.Range(wall.bounds.extents.x, (wall.bounds.extents.x * -1)), Random.Range(wall.bounds.extents.y, (wall.bounds.extents.y * -1)));
-        
-        //Spawn a rat
-        Rat newRat = Instantiate(ratPrefab, position, Quaternion.identity, null).GetComponent<Rat>();
-    
-        newRat.tier = tier;
-        newRat.Set_Rat();
-
-        //See if its a shiney.
-        if (Random.Range(0f, 100f) > 100 - 10 * spawnChanceUpgrade.Level)
-       {
-            newRat.type = ratTypes[1];
-            newRat.Set_Rat();
-       }
-
-        spawnedRats.Add(newRat);
-    }
-
-    public void SpawnBoughtRat(RatType type, int tier)
+    public void SpawnRat(RatType type, int tier)
     {
         //Pick a location to spawn the rat
         Vector2 position = new Vector2(Random.Range(wall.bounds.extents.x, (wall.bounds.extents.x * -1)), Random.Range(wall.bounds.extents.y, (wall.bounds.extents.y * -1)));
@@ -93,5 +67,16 @@ public class RatManager : MonoBehaviour
     {
         spawnedRats.Remove(rat);
         Destroy(rat.gameObject);
+    }
+    
+    public void LoadRats(List<int> ratAmountPerTier)
+    {
+        for (int tierNumber = 0; tierNumber < ratAmountPerTier.Count; tierNumber++)
+        {
+            for(int j = 0; j < ratAmountPerTier[tierNumber]; j++)
+            {
+                SpawnRat(ratTypes[0] , tierNumber);
+            }
+        }
     }
 }
