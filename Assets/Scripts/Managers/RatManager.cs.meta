@@ -6,7 +6,7 @@ MonoImporter:
   defaultReferences:
   - wall: {instanceID: 0}
   - ratPrefab: {fileID: 4804409890504352664, guid: b1c460dd114cb774abfbc58ce58a881e, type: 3}
-  executionOrder: 0
+  executionOrder: -20
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 
