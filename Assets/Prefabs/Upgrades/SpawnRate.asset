@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed5a34d1b67bac46bc9397256319207, type: 3}
   m_Name: SpawnRate
   m_EditorClassIdentifier: 
-  level: 0
+  timesBought: 0
+  limit: 9
   baseCost: 20
-  costIncrementCoefficient: 1.5
+  incrementCostFactor: 5
