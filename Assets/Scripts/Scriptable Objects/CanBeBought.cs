@@ -18,6 +18,6 @@ namespace Scriptable_Objects
         }
         public double BaseCost { get => baseCost; }
         public double IncrementCostFactor { get => incrementCostFactor; }
-        public abstract void HasBeenBought();
+        public abstract bool HasBeenBought(); //returns true if success, false if failed.
     }
 }

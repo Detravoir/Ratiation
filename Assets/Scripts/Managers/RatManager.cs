@@ -21,6 +21,11 @@ public class RatManager : MonoBehaviour
 
     public List<Rat> spawnedRats;
     [SerializeField] private int maxRats = 16;
+    
+    public int MaxRats
+    {
+        get => maxRats;
+    }
 
     private Coroutine _spawnRatCoroutine;
     
