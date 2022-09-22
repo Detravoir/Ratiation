@@ -6,6 +6,8 @@ using UnityEngine.Serialization;
 
 public class DragRats : MonoBehaviour
 {
+    public static Action<int> OnMergeEvent;
+    
     public static DragRats Instance { get; private set; }
     [SerializeField] private UserInput userInput;
     [SerializeField] private float ratCheckRadius = 0.5f;
@@ -37,11 +39,10 @@ public class DragRats : MonoBehaviour
 
     private void CompareRats(Rat thisRat, Rat otherRat)
     {
-        if (thisRat.tier == otherRat.tier)
-        {
-            thisRat.Evolve();
-            GetRatManager().RemoveRat(otherRat);
-        }
+        if (thisRat.tier != otherRat.tier) return;
+        thisRat.Evolve();
+        GetRatManager().RemoveRat(otherRat);
+        OnMergeEvent?.Invoke(thisRat.tier);
     }
 
     private void InputDown()
