@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timesBought: 0
   buyLimit: 0
-  baseCost: 20
-  incrementCostFactor: 1.25
+  baseCost: 100
+  incrementCostFactor: 5

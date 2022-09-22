@@ -17,6 +17,7 @@ public class RatManager : MonoBehaviour
     [SerializeField] private RatType[] ratTypes;
     [SerializeField] private UpgradeType spawnRateUpgrade;
     [SerializeField] private UpgradeType spawnChanceUpgrade;
+    [SerializeField] private UpgradeType spawnHigherTierChanceUpgrade;
 
     public List<Rat> spawnedRats;
     [SerializeField] private int maxRats = 16;
@@ -38,13 +39,13 @@ public class RatManager : MonoBehaviour
     {
         while (true)
         {
+            yield return new WaitForSeconds(ratSpawnInterval - spawnRateUpgrade.Level);
             if (spawnedRats.Count < maxRats)
             {
                 var type = Random.Range(0f, 100f) > 100 - 10 * spawnChanceUpgrade.Level ? ratTypes[1] : ratTypes[0];
-                var tier = 1;
+                var tier = Random.Range(1, spawnHigherTierChanceUpgrade.Level + 1);
                 SpawnRat(type, tier);
             };
-            yield return new WaitForSeconds(ratSpawnInterval - spawnRateUpgrade.Level);
         }
     }
 
@@ -58,7 +59,7 @@ public class RatManager : MonoBehaviour
 
         newRat.type = type;
         newRat.tier = tier;
-        newRat.Set_Rat();
+        newRat.SetRat();
         
         spawnedRats.Add(newRat);
     }
