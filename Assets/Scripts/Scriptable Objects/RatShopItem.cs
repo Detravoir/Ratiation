@@ -13,7 +13,7 @@ namespace Scriptable_Objects
         {
             Debug.Log("Fired!");
             timesBought++;
-            RatManager.Instance.SpawnBoughtRat(type, tier);
+            RatManager.Instance.SpawnRat(type, tier);
         }
     }
 }

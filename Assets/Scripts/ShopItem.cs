@@ -17,21 +17,40 @@ public class ShopItem : MonoBehaviour
     {
         CalculateCost();
     }
-
+    
     //Buy gets called when the UI button gets clicked.
+    [ContextMenu("Buy")]
     public void Buy()
     {
+        //Check if not going over the limit.
+        if (thingToBuy.BuyLimit != 0)
+        {
+            if (thingToBuy.TimesBought + 1 > thingToBuy.BuyLimit) return;
+        }
         //Check if cost is not higher then current amount of RatPower.
         if (_cost > CurrencyManager.TotalRatPower) return;
+        
         CurrencyManager.DeductRatPower(_cost);
         thingToBuy.HasBeenBought();
         CalculateCost();
     }
 
     //Calculates the cost of the next level.
+    [ContextMenu("Calculate Cost")]
     private void CalculateCost()
     {
         _cost = Math.Round(thingToBuy.BaseCost * Math.Pow(thingToBuy.IncrementCostFactor, thingToBuy.TimesBought + 1));
+        
+        //if limit has been reached set Max Level
+        if (thingToBuy.BuyLimit != 0)
+        {
+            if (thingToBuy.TimesBought >= thingToBuy.BuyLimit)
+            {
+                buyButtonText.text = "Max Level";
+                return;
+            }
+        }
+
         buyButtonText.text = _cost.ToString();
     }
 }
