@@ -52,8 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ea8607d748a514b9266da9ac59ea2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: {fileID: 0}
+  thingToBuy: {fileID: 0}
   buyButtonText: {fileID: 1171446020031801296}
+  buyButtonImage: {fileID: 4658114069600353490}
 --- !u!1 &2557905530222665571
 GameObject:
   m_ObjectHideFlags: 0
