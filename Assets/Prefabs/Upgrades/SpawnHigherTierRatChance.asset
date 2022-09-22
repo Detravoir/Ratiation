@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SpawnHigherTierRatChance
   m_EditorClassIdentifier: 
   timesBought: 0
-  buyLimit: 0
+  buyLimit: 10
   baseCost: 100
   incrementCostFactor: 5
