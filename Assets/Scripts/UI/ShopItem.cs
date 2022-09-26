@@ -12,7 +12,7 @@ namespace UI
         [SerializeField] private CanBeBought thingToBuy;   //scriptable object for content fill.
         [SerializeField] private TMP_Text buyButtonText;
         [SerializeField] private Image buyButtonImage;
-        
+
         private double _cost;                              //used to hold the cost of the next level.
 
         private void Awake()

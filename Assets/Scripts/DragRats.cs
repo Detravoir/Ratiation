@@ -41,7 +41,7 @@ public class DragRats : MonoBehaviour
         if (thisRat.tier != otherRat.tier) return;
         thisRat.Evolve();
         GetRatManager().RemoveRat(otherRat);
-        Events.OnRatMerge?.Invoke(thisRat.tier);
+        EventManager.OnRatMerge?.Invoke(thisRat.tier);
     }
 
     private void InputDown()

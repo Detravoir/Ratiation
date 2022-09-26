@@ -82,7 +82,7 @@ public class Rat : MonoBehaviour
         //calculate amount of cheese generated.
         var cheeseGenerated = (Math.Pow(type.BasePowerPerMinute, tier) + 0.5 * tier) * 10;
         //Fire On cheese event
-        Events.OnCheeseGenerated?.Invoke(cheeseGenerated);
+        EventManager.OnCheeseGenerated?.Invoke(cheeseGenerated);
         
         _moveTimer = 10f;
     }

@@ -15,7 +15,7 @@ public class CurrencyManager : MonoBehaviour
     private void Awake()
     {
         SaveGameManager.InformationLoaded += LoadRatPower;
-        Events.OnCheeseGenerated += AddRatPower;
+        EventManager.OnCheeseGenerated += AddRatPower;
     }
 
     private void LoadRatPower()
@@ -26,7 +26,7 @@ public class CurrencyManager : MonoBehaviour
     private void OnDisable()
     {
         SaveGameManager.InformationLoaded -= LoadRatPower;
-        Events.OnCheeseGenerated -= AddRatPower;
+        EventManager.OnCheeseGenerated -= AddRatPower;
     }
 
     public static void DeductRatPower(double amount)
