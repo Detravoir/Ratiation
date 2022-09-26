@@ -6,11 +6,7 @@ using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
 {
-    //event for Rats to subscribe to.
-    public static Action TaxRatsEvent;
-    
-    private static Coroutine _taxRatCoroutine;
-    public static double _totalRatPower = 0;
+    private static double _totalRatPower = 0;
     public static double TotalRatPower
     {
         get => _totalRatPower;
@@ -18,8 +14,8 @@ public class CurrencyManager : MonoBehaviour
 
     private void Awake()
     {
-        _taxRatCoroutine = StartCoroutine(TaxRats());
         SaveGameManager.InformationLoaded += LoadRatPower;
+        Events.OnCheeseGenerated += AddRatPower;
     }
 
     private void LoadRatPower()
@@ -29,19 +25,10 @@ public class CurrencyManager : MonoBehaviour
 
     private void OnDisable()
     {
-        StopCoroutine(_taxRatCoroutine);
         SaveGameManager.InformationLoaded -= LoadRatPower;
+        Events.OnCheeseGenerated -= AddRatPower;
     }
 
-    private static IEnumerator TaxRats()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(10);
-            TaxRatsEvent?.Invoke();
-        }
-    }
-    
     public static void DeductRatPower(double amount)
     {
         _totalRatPower -= amount;

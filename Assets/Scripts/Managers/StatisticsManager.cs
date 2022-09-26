@@ -14,14 +14,16 @@ public class StatisticsManager : MonoBehaviour
 
     private void Awake()
     {
-        DragRats.OnMergeEvent += CheckHighestTier;
-        DragRats.OnMergeEvent += AddToTotalMerges;
+        Events.OnRatMerge += CheckHighestTier;
+        Events.OnRatMerge += AddToTotalMerges;
+        Events.OnCheeseGenerated += AddCheeseToTotal;
     }
 
     private void OnDisable()
     {
-        DragRats.OnMergeEvent -= CheckHighestTier;
-        DragRats.OnMergeEvent -= AddToTotalMerges;
+        Events.OnRatMerge -= CheckHighestTier;
+        Events.OnRatMerge -= AddToTotalMerges;
+        Events.OnCheeseGenerated -= AddCheeseToTotal;
     }
 
     private void CheckHighestTier(int tier)
