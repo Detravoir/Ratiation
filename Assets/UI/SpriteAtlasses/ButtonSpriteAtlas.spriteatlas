@@ -58,9 +58,11 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 005c4513c884c4ff8b8a24dd55564ba3, type: 3}
   - {fileID: 21300000, guid: bd4bb483feb3c4015b1ee1fbb6863a5f, type: 3}
   - {fileID: 21300000, guid: 8a475bf3056d745eaa20d1d69d0c9103, type: 3}
+  - {fileID: 21300000, guid: 2ccf2ff33941f4412b57e6d7749c844f, type: 3}
   - {fileID: 21300000, guid: e16d0c55ca15b4b2595b9627dd8cb0fc, type: 3}
   - {fileID: 21300000, guid: b0b9d426988c5448999bdc7f8759d6c6, type: 3}
   - {fileID: 21300000, guid: 32222d86a500143068617d1230c7a759, type: 3}
+  - {fileID: 21300000, guid: 56c7f5e6623a24e9c89933916d01ca0e, type: 3}
   - {fileID: 21300000, guid: c617f637567bd41ad8e852e6578a98c5, type: 3}
   - {fileID: 21300000, guid: 8bf2ab47e5ec44f4eba4c294e6e651d4, type: 3}
   - {fileID: 21300000, guid: 44d0cb77cb7c040608e987292103e3fc, type: 3}
@@ -69,6 +71,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e250933b0dcf9445abd5c9de915c83ae, type: 3}
   - {fileID: 21300000, guid: c0a561ab1626a43a294991813af70b02, type: 3}
   - {fileID: 21300000, guid: 06dbea2c6e2f94c1bbac619db76e5c59, type: 3}
+  - {fileID: 21300000, guid: 4396405da432541309ee0f0c90b2408e, type: 3}
   - {fileID: 21300000, guid: 6b973efea09c7460db9ca4f5c45cc9cd, type: 3}
   - {fileID: 21300000, guid: 5b372f5fa7ebb4a58a14716b1680b0e4, type: 3}
   - {fileID: 21300000, guid: 8f6106cf010314beb98b1211f0a3fea1, type: 3}
@@ -81,9 +84,11 @@ SpriteAtlas:
   - IndexButton
   - RatPowerIcon
   - CageGrey
+  - RatKingPortrait
   - UpgradePortraitLined
   - UpgradePortrait
   - CloseButton
+  - Textbar
   - AchievementsButton
   - ShopButton
   - StatsButton
@@ -92,6 +97,7 @@ SpriteAtlas:
   - ComingSoon
   - UpgradeSpeed
   - UpgradeBuyButton
+  - Arrow
   - ShopBuyButton
   - UpgradeButton
   - IndexBox
