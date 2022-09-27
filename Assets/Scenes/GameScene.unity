@@ -5120,6 +5120,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -161.4493
       objectReference: {fileID: 0}
+    - target: {fileID: 5170098036442158541, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7810995482755904335, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_SizeDelta.x
       value: 255
@@ -6011,6 +6015,10 @@ PrefabInstance:
     - target: {fileID: 3944316717491749814, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 40.038116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170098036442158541, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7810995482755904335, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_SizeDelta.x
@@ -7798,6 +7806,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -42.3818
       objectReference: {fileID: 0}
+    - target: {fileID: 5170098036442158541, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7810995482755904335, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_SizeDelta.x
       value: 255
@@ -9529,6 +9541,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Shiny Spawn Chance
       objectReference: {fileID: 0}
+    - target: {fileID: 1916684965862162063, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3739546493187095276, guid: 99448eb84624006489af9c30a9695c47, type: 3}
       propertyPath: m_SizeDelta.x
       value: 225.78
@@ -9825,6 +9841,10 @@ PrefabInstance:
     - target: {fileID: 3944316717491749814, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -115.692635
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170098036442158541, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7810995482755904335, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_SizeDelta.x
@@ -13394,6 +13414,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -52.961884
       objectReference: {fileID: 0}
+    - target: {fileID: 5170098036442158541, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7810995482755904335, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_SizeDelta.x
       value: 255
@@ -16772,6 +16796,10 @@ PrefabInstance:
     - target: {fileID: 3944316717491749814, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -99.848724
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170098036442158541, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7810995482755904335, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_SizeDelta.x
@@ -25116,6 +25144,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Spawn Rate
       objectReference: {fileID: 0}
+    - target: {fileID: 1916684965862162063, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3739546493187095276, guid: 99448eb84624006489af9c30a9695c47, type: 3}
       propertyPath: m_SizeDelta.x
       value: 225.78
@@ -31643,6 +31675,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 73.03813
       objectReference: {fileID: 0}
+    - target: {fileID: 5170098036442158541, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7810995482755904335, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_SizeDelta.x
       value: 255
@@ -34763,6 +34799,10 @@ PrefabInstance:
     - target: {fileID: 1699053828411465879, guid: 99448eb84624006489af9c30a9695c47, type: 3}
       propertyPath: m_enableAutoSizing
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916684965862162063, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8515121967295664919, guid: 99448eb84624006489af9c30a9695c47, type: 3}
       propertyPath: thingToBuy
@@ -38814,6 +38854,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -126.85256
       objectReference: {fileID: 0}
+    - target: {fileID: 5170098036442158541, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7810995482755904335, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_SizeDelta.x
       value: 255
@@ -41052,6 +41096,10 @@ PrefabInstance:
     - target: {fileID: 3944316717491749814, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -35.961872
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170098036442158541, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
+      propertyPath: tierToUnlockAt
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6114304291068127237, guid: bc8bbb64ca0cb4753acc39a781ce2f54, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
