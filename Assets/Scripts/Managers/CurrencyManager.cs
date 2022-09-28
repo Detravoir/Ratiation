@@ -6,49 +6,32 @@ using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
 {
-    //event for Rats to subscribe to.
-    public static Action TaxRatsEvent;
-    
-    private static Coroutine _taxRatCoroutine;
-    public static double _totalRatPower = 0;
-    public static double TotalRatPower
-    {
-        get => _totalRatPower;
-    }
+    public static double Cheese { get; private set; } = 0;
 
     private void Awake()
     {
-        _taxRatCoroutine = StartCoroutine(TaxRats());
-        SaveGameManager.InformationLoaded += LoadRatPower;
-    }
-
-    private void LoadRatPower()
-    {
-        _totalRatPower = SaveGameManager.totalratpower;
+        EventManager.OnGameLoaded += LoadCheese;
+        EventManager.OnCheeseGenerated += AddRatPower;
     }
 
     private void OnDisable()
     {
-        StopCoroutine(_taxRatCoroutine);
-        SaveGameManager.InformationLoaded -= LoadRatPower;
+        EventManager.OnGameLoaded -= LoadCheese;
+        EventManager.OnCheeseGenerated -= AddRatPower;
     }
 
-    private static IEnumerator TaxRats()
+    private void LoadCheese(SaveGameManager saveGameManager)
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(10);
-            TaxRatsEvent?.Invoke();
-        }
+        Cheese = saveGameManager.cheese;
     }
     
     public static void DeductRatPower(double amount)
     {
-        _totalRatPower -= amount;
+        Cheese -= amount;
     }
     
     public static void AddRatPower(double amount)
     {
-        _totalRatPower += amount;
+        Cheese += amount;
     }
 }

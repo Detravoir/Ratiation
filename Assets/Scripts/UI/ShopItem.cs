@@ -12,7 +12,7 @@ namespace UI
         [SerializeField] private CanBeBought thingToBuy;   //scriptable object for content fill.
         [SerializeField] private TMP_Text buyButtonText;
         [SerializeField] private Image buyButtonImage;
-        
+
         private double _cost;                              //used to hold the cost of the next level.
 
         private void Awake()
@@ -75,7 +75,7 @@ namespace UI
                 if (thingToBuy.TimesBought + 1 > thingToBuy.BuyLimit) return false;
             }
             //Check if cost is not higher then current amount of RatPower.
-            if (_cost > CurrencyManager.TotalRatPower) return false;
+            if (_cost > CurrencyManager.Cheese) return false;
             
             return true;
         }

@@ -15,7 +15,7 @@ namespace UI
 
         private void Update()
         {
-            _tmpText.text = CurrencyManager.TotalRatPower.ToString();
+            _tmpText.text = CurrencyManager.Cheese.ToString();
         }
     }
 }
