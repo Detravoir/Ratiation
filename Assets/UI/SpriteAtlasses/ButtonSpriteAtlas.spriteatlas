@@ -69,6 +69,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ab7a96d7aed9a4cc28ea2370202e62ed, type: 3}
   - {fileID: 21300000, guid: f0058579ab93d4c14bd96d1637df3160, type: 3}
   - {fileID: 21300000, guid: e250933b0dcf9445abd5c9de915c83ae, type: 3}
+  - {fileID: 21300000, guid: 103a784b2975c4a978210ef11e23651c, type: 3}
   - {fileID: 21300000, guid: c0a561ab1626a43a294991813af70b02, type: 3}
   - {fileID: 21300000, guid: 06dbea2c6e2f94c1bbac619db76e5c59, type: 3}
   - {fileID: 21300000, guid: 4396405da432541309ee0f0c90b2408e, type: 3}
@@ -95,6 +96,7 @@ SpriteAtlas:
   - UpgradeNameTag
   - SettingsButton
   - ComingSoon
+  - CloseWithoutGlow
   - UpgradeSpeed
   - UpgradeBuyButton
   - Arrow
