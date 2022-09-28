@@ -14,6 +14,7 @@ public class StatisticsManager : MonoBehaviour
 
     private void Awake()
     {
+        EventManager.OnGameLoaded += LoadStatistics;
         EventManager.OnRatMerge += CheckHighestTier;
         EventManager.OnRatMerge += AddToTotalMerges;
         EventManager.OnCheeseGenerated += AddCheeseToTotal;
@@ -21,9 +22,18 @@ public class StatisticsManager : MonoBehaviour
 
     private void OnDisable()
     {
+        EventManager.OnGameLoaded -= LoadStatistics;
         EventManager.OnRatMerge -= CheckHighestTier;
         EventManager.OnRatMerge -= AddToTotalMerges;
         EventManager.OnCheeseGenerated -= AddCheeseToTotal;
+    }
+
+    private void LoadStatistics(SaveGameManager saveGameManager)
+    {
+        Debug.Log("Fired!");
+        highestTierReached = saveGameManager.highestTierReached;
+        totalMerges = saveGameManager.totalMerges;
+        totalCheeseGained = saveGameManager.totalCheeseGained;
     }
 
     private void CheckHighestTier(int tier)

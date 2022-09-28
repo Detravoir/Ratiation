@@ -75,7 +75,7 @@ namespace UI
                 if (thingToBuy.TimesBought + 1 > thingToBuy.BuyLimit) return false;
             }
             //Check if cost is not higher then current amount of RatPower.
-            if (_cost > CurrencyManager.TotalRatPower) return false;
+            if (_cost > CurrencyManager.Cheese) return false;
             
             return true;
         }

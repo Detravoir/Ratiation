@@ -23,7 +23,7 @@ namespace UI
 
         private void CheckCheeseCount(double amountGenerated)
         {
-            if (CurrencyManager.TotalRatPower < cheeseCountToUnlockAt) return;
+            if (CurrencyManager.Cheese < cheeseCountToUnlockAt) return;
             
             objectToUnlock.SetActive(true);
             EventManager.OnCheeseGenerated -= CheckCheeseCount;

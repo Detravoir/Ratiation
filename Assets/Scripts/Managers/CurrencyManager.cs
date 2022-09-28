@@ -6,36 +6,32 @@ using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
 {
-    private static double _totalRatPower = 0;
-    public static double TotalRatPower
-    {
-        get => _totalRatPower;
-    }
+    public static double Cheese { get; private set; } = 0;
 
     private void Awake()
     {
-        SaveGameManager.InformationLoaded += LoadRatPower;
+        EventManager.OnGameLoaded += LoadCheese;
         EventManager.OnCheeseGenerated += AddRatPower;
-    }
-
-    private void LoadRatPower()
-    {
-        _totalRatPower = SaveGameManager.totalratpower;
     }
 
     private void OnDisable()
     {
-        SaveGameManager.InformationLoaded -= LoadRatPower;
+        EventManager.OnGameLoaded -= LoadCheese;
         EventManager.OnCheeseGenerated -= AddRatPower;
     }
 
+    private void LoadCheese(SaveGameManager saveGameManager)
+    {
+        Cheese = saveGameManager.cheese;
+    }
+    
     public static void DeductRatPower(double amount)
     {
-        _totalRatPower -= amount;
+        Cheese -= amount;
     }
     
     public static void AddRatPower(double amount)
     {
-        _totalRatPower += amount;
+        Cheese += amount;
     }
 }
