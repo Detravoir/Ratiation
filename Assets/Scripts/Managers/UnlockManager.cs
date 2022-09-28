@@ -8,12 +8,19 @@ namespace UI
         
         private void Awake()
         {
+            EventManager.OnGameLoaded += LoadUnlockedItems;
             EventManager.OnRatMerge += Unlock;
         }
-
+        
         private void OnDisable()
         {
+            EventManager.OnGameLoaded -= LoadUnlockedItems;
             EventManager.OnRatMerge -= Unlock;
+        }
+
+        private void LoadUnlockedItems(SaveGameManager saveGameManager)
+        {
+            Unlock(saveGameManager.highestTierReached);
         }
 
         protected abstract void Unlock(int tier);

@@ -41000,10 +41000,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2939730739592428332, guid: cc11d0afa5b16b64a8a6aebc9cc5939e, type: 3}
-      propertyPath: gamemanager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2939730739592428332, guid: cc11d0afa5b16b64a8a6aebc9cc5939e, type: 3}
       propertyPath: shopItems.Array.size
       value: 12
       objectReference: {fileID: 0}
@@ -41047,10 +41043,6 @@ PrefabInstance:
       propertyPath: shopItems.Array.data[11]
       value: 
       objectReference: {fileID: 11400000, guid: bcb94b9fe3470a646bf591b89c0d222a, type: 2}
-    - target: {fileID: 3052465401316280275, guid: cc11d0afa5b16b64a8a6aebc9cc5939e, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4564294576546275526, guid: cc11d0afa5b16b64a8a6aebc9cc5939e, type: 3}
       propertyPath: wall
       value: 

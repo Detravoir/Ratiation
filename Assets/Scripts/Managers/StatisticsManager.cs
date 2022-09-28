@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class StatisticsManager : MonoBehaviour 
 {
@@ -30,7 +28,6 @@ public class StatisticsManager : MonoBehaviour
 
     private void LoadStatistics(SaveGameManager saveGameManager)
     {
-        Debug.Log("Fired!");
         highestTierReached = saveGameManager.highestTierReached;
         totalMerges = saveGameManager.totalMerges;
         totalCheeseGained = saveGameManager.totalCheeseGained;

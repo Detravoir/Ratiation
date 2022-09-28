@@ -1,6 +1,3 @@
-using System;
-using UnityEngine;
-
 namespace UI
 {
     public class RatShopUnlockManager : UnlockManager
@@ -9,7 +6,10 @@ namespace UI
         {
             for (var i = 0; i < tier; i++)
             {
-                items[i].SetActive(true);
+                if (i - 3 >= 0)
+                {
+                    items[i-3].SetActive(true);
+                }
             }
         }
     }
