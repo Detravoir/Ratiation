@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thingToBuy: {fileID: 0}
   buyButtonText: {fileID: 8349248795618454345}
+  buyButtonImage: {fileID: 6616109927062943250}
 --- !u!1 &1923937899113197906
 GameObject:
   m_ObjectHideFlags: 0

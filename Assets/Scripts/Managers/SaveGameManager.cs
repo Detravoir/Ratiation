@@ -22,6 +22,14 @@ public class SaveGameManager : MonoBehaviour
         Load();
     }
 
+    void OnApplicationPause(bool pausestatus)
+    {
+        if (pausestatus)
+        {
+            Save();
+        }
+    } 
+
     void OnApplicationQuit()
     {
         Save();
@@ -29,7 +37,7 @@ public class SaveGameManager : MonoBehaviour
 
     private void Start()
     {
-        _ratManager.StartSpawnRats(ratAmountPerTier);
+        _ratManager.LoadRats(ratAmountPerTier);
     }
 
     public void Update()
@@ -49,11 +57,13 @@ public class SaveGameManager : MonoBehaviour
     [ContextMenu("Load Game")]
     public void Load()
     {
+        //Load rats
         for (int i = 0; i < ratAmountPerTier.Count; i++)
         {
             ratAmountPerTier[i] = PlayerPrefs.GetInt("AmountOfRatsInTier" + i.ToString());
         }
-
+        
+        //Load rat power
         var ratpower = PlayerPrefs.GetString("TotalRatPower");
         totalratpower = System.Convert.ToDouble(ratpower);
         
@@ -62,6 +72,7 @@ public class SaveGameManager : MonoBehaviour
         InformationLoaded.Invoke();
     }
 
+    //TODO: Save rat type.
     public void ProcessRatAmountPerTier()
     {
         // reset list first

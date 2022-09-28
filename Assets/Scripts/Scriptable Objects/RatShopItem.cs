@@ -9,11 +9,13 @@ namespace Scriptable_Objects
         [SerializeField] private int tier = 1;
         [SerializeField] private RatType type;
 
-        public override void HasBeenBought()
+        public override bool HasBeenBought()
         {
-            Debug.Log("Fired!");
+            var ratManager = RatManager.Instance;
+            if (ratManager.spawnedRats.Count >= ratManager.MaxRats) return false;
             timesBought++;
-            RatManager.Instance.SpawnBoughtRat(type, tier);
+            ratManager.SpawnRat(type, tier);
+            return true;
         }
     }
 }
