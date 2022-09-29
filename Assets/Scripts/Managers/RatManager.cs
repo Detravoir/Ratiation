@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Scriptable_Objects;
 using UnityEngine;
 using UnityEngine.Serialization;
-using Random = UnityEngine.Random;
 
 public class RatManager : MonoBehaviour
 {
@@ -14,25 +12,28 @@ public class RatManager : MonoBehaviour
     
     [FormerlySerializedAs("ratSpawnTime")] [SerializeField] private float ratSpawnInterval = 10f;
     [SerializeField] private GameObject ratPrefab;
-    [SerializeField] private RatType[] ratTypes;
+    [SerializeField] private List<RatType> ratTypes;
     [SerializeField] private UpgradeType spawnRateUpgrade;
     [SerializeField] private UpgradeType spawnChanceUpgrade;
     [SerializeField] private UpgradeType spawnHigherTierChanceUpgrade;
-
-    public List<Rat> spawnedRats;
     [SerializeField] private int maxRats = 16;
-    
-    public int MaxRats
-    {
-        get => maxRats;
-    }
+
+    public List<Rat> SpawnedRats { get; private set; }
+    public int MaxRats => maxRats;
+    public List<RatType> RatTypes => ratTypes;
 
     private Coroutine _spawnRatCoroutine;
-    
+
+    public RatManager(List<Rat> spawnedRats)
+    {
+        SpawnedRats = spawnedRats;
+    }
+
     void Awake()
     {
         Instance = this;
         _spawnRatCoroutine = StartCoroutine(SpawnRatTimer());
+        SpawnedRats = new List<Rat>();
     }
 
     private void OnDisable()
@@ -45,7 +46,7 @@ public class RatManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(ratSpawnInterval - spawnRateUpgrade.Level);
-            if (spawnedRats.Count < maxRats)
+            if (SpawnedRats.Count < maxRats)
             {
                 var type = Random.Range(0f, 100f) > 100 - 10 * spawnChanceUpgrade.Level ? ratTypes[1] : ratTypes[0];
                 var tier = Random.Range(1, spawnHigherTierChanceUpgrade.Level + 1);
@@ -66,23 +67,17 @@ public class RatManager : MonoBehaviour
         newRat.tier = tier;
         newRat.SetRat();
         
-        spawnedRats.Add(newRat);
+        SpawnedRats.Add(newRat);
     }
 
     public void RemoveRat(Rat rat)
     {
-        spawnedRats.Remove(rat);
+        SpawnedRats.Remove(rat);
         Destroy(rat.gameObject);
     }
     
-    public void LoadRats(List<int> ratAmountPerTier)
+    public void SpawnLoadedRat(int type, int tier)
     {
-        for (int tierNumber = 0; tierNumber < ratAmountPerTier.Count; tierNumber++)
-        {
-            for(int j = 0; j < ratAmountPerTier[tierNumber]; j++)
-            {
-                SpawnRat(ratTypes[0] , tierNumber);
-            }
-        }
+        SpawnRat(RatTypes[type], tier);
     }
 }
