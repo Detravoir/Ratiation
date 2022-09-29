@@ -31,9 +31,57 @@ Transform:
   - {fileID: 2939730739592428335}
   - {fileID: 3995413484098193803}
   - {fileID: 3052465401316280275}
+  - {fileID: 7406273565213047378}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2919065950254118868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7406273565213047378}
+  - component: {fileID: 6458509243407304714}
+  m_Layer: 0
+  m_Name: StatisticsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7406273565213047378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919065950254118868}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 369653397637499141}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6458509243407304714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919065950254118868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040c53f1f73d4d5a8f7628aa44b3274e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highestTierReached: 1
+  totalMerges: 0
+  totalCheeseGained: 0
 --- !u!1 &2939730739592428333
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,9 +127,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ratAmountPerTier: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  cheese: 0
   shopItems:
   - {fileID: 11400000, guid: b2444642c3250b1488768be5b6e37d70, type: 2}
   - {fileID: 11400000, guid: b0e33bef26445964f8a658b773a9420e, type: 2}
+  statisticsManager: {fileID: 6458509243407304714}
+  totalCheeseGained: 0
+  totalMerges: 0
+  highestTierReached: 0
 --- !u!1 &3289454137684514291
 GameObject:
   m_ObjectHideFlags: 0

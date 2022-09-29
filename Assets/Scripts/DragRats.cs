@@ -35,13 +35,14 @@ public class DragRats : MonoBehaviour
     private void CompareRats(Rat thisRat, Rat otherRat)
     {
         if (thisRat.tier != otherRat.tier) return;
+        //pick a type based on a 50/50 chance.
         if (Random.Range(1, 10) > 5)
         {
             thisRat.type = otherRat.type;
         }
-        
         thisRat.Evolve();
         GetRatManager().RemoveRat(otherRat);
+        EventManager.OnRatMerge?.Invoke(thisRat.tier);
     }
 
     private void InputDown()
