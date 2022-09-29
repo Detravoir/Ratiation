@@ -48,6 +48,7 @@ public class SaveGameManager : MonoBehaviour
         SaveCheeseAmount();
         SaveShopItems();
         SaveStatistics();
+        PlayerPrefs.Save();
     }
 
     [ContextMenu("Load Game")]
