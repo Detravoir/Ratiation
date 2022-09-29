@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class DragRats : MonoBehaviour
 {
@@ -37,11 +34,14 @@ public class DragRats : MonoBehaviour
 
     private void CompareRats(Rat thisRat, Rat otherRat)
     {
-        if (thisRat.tier == otherRat.tier)
+        if (thisRat.tier != otherRat.tier) return;
+        if (Random.Range(1, 10) > 5)
         {
-            thisRat.Evolve();
-            GetRatManager().RemoveRat(otherRat);
+            thisRat.type = otherRat.type;
         }
+        
+        thisRat.Evolve();
+        GetRatManager().RemoveRat(otherRat);
     }
 
     private void InputDown()
