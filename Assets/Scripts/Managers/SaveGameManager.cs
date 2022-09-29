@@ -64,11 +64,11 @@ public class SaveGameManager : MonoBehaviour
     private void SaveCheeseAmount() 
     {
         cheese = CurrencyManager.Cheese;
-        PlayerPrefs.SetString("TotalRatPower", cheese.ToString(CultureInfo.CurrentCulture));
+        PlayerPrefs.SetString("Cheese", cheese.ToString(CultureInfo.CurrentCulture));
     }
     private void LoadCheeseAmount()
     {
-        cheese = Convert.ToDouble(PlayerPrefs.GetString("TotalRatPower"));
+        cheese = Convert.ToDouble(PlayerPrefs.GetString("Cheese", "0"));
     }
     
     private void SaveRats()
