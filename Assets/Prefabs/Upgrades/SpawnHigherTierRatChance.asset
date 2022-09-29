@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ed5a34d1b67bac46bc9397256319207, type: 3}
-  m_Name: SpawnRate
+  m_Name: SpawnHigherTierRatChance
   m_EditorClassIdentifier: 
   timesBought: 0
-  limit: 9
-  baseCost: 20
+  buyLimit: 10
+  baseCost: 100
   incrementCostFactor: 5

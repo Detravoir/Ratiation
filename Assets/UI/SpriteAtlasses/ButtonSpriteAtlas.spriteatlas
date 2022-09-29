@@ -52,6 +52,8 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 043acd21074714c0bb1528b985b81e1c, type: 3}
   - {fileID: 21300000, guid: 31636b51627974571b44c12ae2df305d, type: 3}
+  - {fileID: 21300000, guid: 55d52661b109546a7bc5ef60d8d19c9f, type: 3}
+  - {fileID: 21300000, guid: 70f7cb613bcf145108c099e4756d4a9f, type: 3}
   - {fileID: 21300000, guid: bacd6ef1f4d9d461aa0993a387fc65ec, type: 3}
   - {fileID: 21300000, guid: 31a417223b877443a8878a795a89a768, type: 3}
   - {fileID: 21300000, guid: 8e179c32f342c40c4ba830838f7a6bb9, type: 3}
@@ -79,6 +81,8 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - ShopCage
   - ToggleChecked
+  - EqualSign
+  - Plus
   - HowToButton
   - questionmark
   - ToggleUnchecked

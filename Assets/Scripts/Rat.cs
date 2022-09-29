@@ -25,7 +25,7 @@ public class Rat : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _dragRatsScript = DragRats.Instance;
-        Set_Rat();
+        SetRat();
     }
 
     private void OnDisable()
@@ -72,11 +72,11 @@ public class Rat : MonoBehaviour
 
     public void GetNewRandomDestination()
     {
-        destination = new Vector2(Random.Range(GameManager.gameManager.wall.bounds.extents.x, (GameManager.gameManager.wall.bounds.extents.x * -1)), Random.Range(GameManager.gameManager.wall.bounds.extents.y, (GameManager.gameManager.wall.bounds.extents.y * -1)));
+        destination = new Vector2(Random.Range(RatManager.Instance.wall.bounds.extents.x, (RatManager.Instance.wall.bounds.extents.x * -1)), Random.Range(RatManager.Instance.wall.bounds.extents.y, (RatManager.Instance.wall.bounds.extents.y * -1)));
         _hasDestination = true;
     }
 
-    public void Set_Rat()
+    public void SetRat()
     {
         _spriteRenderer.sprite = type.RatSpritesAtlas.GetSprite(tier.ToString());
         _boxCollider.size = _spriteRenderer.sprite.bounds.size;
@@ -88,7 +88,7 @@ public class Rat : MonoBehaviour
         //TODO: This doesn't cancel the destruction of the other rat.
         if (tier + 1 > type.MaxTiers) return;
         tier++;
-        Set_Rat();
+        SetRat();
     }
 
     //method used for calculating how much RatPower is being generated.

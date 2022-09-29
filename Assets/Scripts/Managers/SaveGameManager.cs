@@ -11,15 +11,24 @@ public class SaveGameManager : MonoBehaviour
     public static Action InformationLoaded;
 
     //Fields
-    public GameManager gamemanager;
+    private RatManager _ratManager;
     public List<int> ratAmountPerTier;
     public static double totalratpower;
     [FormerlySerializedAs("ShopItems")] [SerializeField] private List<CanBeBought> shopItems;
 
     private void Awake()
     {
+        _ratManager = RatManager.Instance;
         Load();
     }
+
+    void OnApplicationPause(bool pausestatus)
+    {
+        if (pausestatus)
+        {
+            Save();
+        }
+    } 
 
     void OnApplicationQuit()
     {
@@ -28,7 +37,7 @@ public class SaveGameManager : MonoBehaviour
 
     private void Start()
     {
-        gamemanager.StartSpawnRats(ratAmountPerTier);
+        _ratManager.LoadRats(ratAmountPerTier);
     }
 
     public void Update()
@@ -42,25 +51,28 @@ public class SaveGameManager : MonoBehaviour
         ProcessRatAmountPerTier();
         SaveRatAmountPerTier();
         SaveTotalRatPower();
-        SaveRatShopAndUpgrades();
+        SaveShopItems();
     }
 
     [ContextMenu("Load Game")]
     public void Load()
     {
+        //Load rats
         for (int i = 0; i < ratAmountPerTier.Count; i++)
         {
             ratAmountPerTier[i] = PlayerPrefs.GetInt("AmountOfRatsInTier" + i.ToString());
         }
-
-        string ratpower = PlayerPrefs.GetString("TotalRatPower");
+        
+        //Load rat power
+        var ratpower = PlayerPrefs.GetString("TotalRatPower");
         totalratpower = System.Convert.ToDouble(ratpower);
         
-        LoadCanBeBoughtItems();
+        LoadShopItems();
         
         InformationLoaded.Invoke();
     }
 
+    //TODO: Save rat type.
     public void ProcessRatAmountPerTier()
     {
         // reset list first
@@ -69,11 +81,14 @@ public class SaveGameManager : MonoBehaviour
             ratAmountPerTier[i] = 0;
         }
 
-        int totalAmountOfRats = gamemanager.spawnedRats.Count;
-        for (int i = 0; i < totalAmountOfRats; i++)
+        int totalAmountOfRats = _ratManager.spawnedRats.Count;
+        if (totalAmountOfRats > 0)
         {
-            int ratTier = gamemanager.spawnedRats[i].tier;
-            ratAmountPerTier[ratTier]++;
+            for (int i = 0; i < totalAmountOfRats; i++)
+            {
+                int ratTier = _ratManager.spawnedRats[i].tier;
+                ratAmountPerTier[ratTier]++;
+            }
         }
     }
 
@@ -92,7 +107,7 @@ public class SaveGameManager : MonoBehaviour
         }
     }
 
-    private void SaveRatShopAndUpgrades()
+    private void SaveShopItems()
     {
         foreach (var item in shopItems)
         {
@@ -100,7 +115,7 @@ public class SaveGameManager : MonoBehaviour
         }
     }
 
-    public void LoadCanBeBoughtItems()
+    public void LoadShopItems()
     {
         foreach (var item in shopItems)
         {

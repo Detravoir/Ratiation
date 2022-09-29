@@ -13,10 +13,11 @@ public class DragRats : MonoBehaviour
     private Rat _currentlyDraggingRat;
     public bool IsDragged { get; private set; } = false;
 
-    public GameManager gamemanager;
+    private RatManager _ratManager;
 
     private void Awake()
     {
+        _ratManager = RatManager.Instance;
         Instance = this;
     }
 
@@ -26,13 +27,20 @@ public class DragRats : MonoBehaviour
         InputDrag();
         InputUp();
     }
+    private RatManager GetRatManager()
+    {
+        if (_ratManager) return _ratManager;
+        
+        _ratManager = RatManager.Instance;
+        return _ratManager;
+    }
 
     private void CompareRats(Rat thisRat, Rat otherRat)
     {
         if (thisRat.tier == otherRat.tier)
         {
             thisRat.Evolve();
-            gamemanager.RemoveRat(otherRat);
+            GetRatManager().RemoveRat(otherRat);
         }
     }
 
