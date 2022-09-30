@@ -20,10 +20,13 @@ namespace UI
             EventManager.OnRatSpawn -= UpdateCheesePerSecond;
             EventManager.OnRatMerge -= UpdateCheesePerSecondOnMerge;
         }
+        
+        //get TotalCheesePerSecond from the StatisticsManager
         private void UpdateCheesePerSecond()
         {
             _tmpText.text = statisticsManager.TotalCheesePerSecond.ToString(CultureInfo.CurrentCulture);
         }
+        //method to subscribe to the OnRatMerge event.
         private void UpdateCheesePerSecondOnMerge(int tier)
         {
             UpdateCheesePerSecond();

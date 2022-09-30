@@ -65,6 +65,7 @@ public class StatisticsManager : MonoBehaviour
             totalCheesePerSecond += rat.CheesePerSecond;
         }
     }
+    //method to subscribe to the OnRatMerge event.
     private void CalculateTotalCheesePerSecondOnMerge(int tier)
     {
         CalculateTotalCheesePerSecond();
