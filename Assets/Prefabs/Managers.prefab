@@ -79,9 +79,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 040c53f1f73d4d5a8f7628aa44b3274e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ratManager: {fileID: 4564294576546275526}
   highestTierReached: 1
   totalMerges: 0
   totalCheeseGained: 0
+  cheesePerSecond: 0
 --- !u!1 &2939730739592428333
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699cd3ea8c0705f4f95f04e981a29983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratAmountPerTier: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   cheese: 0
   shopItems:
   - {fileID: 11400000, guid: b2444642c3250b1488768be5b6e37d70, type: 2}
@@ -232,5 +233,4 @@ MonoBehaviour:
   spawnRateUpgrade: {fileID: 11400000, guid: b0e33bef26445964f8a658b773a9420e, type: 2}
   spawnChanceUpgrade: {fileID: 11400000, guid: b2444642c3250b1488768be5b6e37d70, type: 2}
   spawnHigherTierChanceUpgrade: {fileID: 11400000, guid: 7900dbf8b1bfeb84eaf4fc66fe0caaff, type: 2}
-  spawnedRats: []
   maxRats: 16

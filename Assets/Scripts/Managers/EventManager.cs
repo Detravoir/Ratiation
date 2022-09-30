@@ -1,6 +1,5 @@
 using System;
 
-
 public static class EventManager
 {
     public static Action<SaveGameManager> OnGameLoaded;
@@ -9,4 +8,5 @@ public static class EventManager
 
     public static Action<double> OnCheeseGenerated;
 
+    public static Action OnRatSpawn;
 }

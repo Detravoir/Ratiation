@@ -68,6 +68,7 @@ public class RatManager : MonoBehaviour
         newRat.SetRat();
         
         SpawnedRats.Add(newRat);
+        EventManager.OnRatSpawn?.Invoke();
     }
 
     public void RemoveRat(Rat rat)

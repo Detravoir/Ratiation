@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Scriptable_Objects;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,6 +7,7 @@ public class Rat : MonoBehaviour
 {
     [SerializeField] public RatType type;
     public int tier = 1;
+    public double CheesePerSecond { get; private set;}
     
     private DragRats _dragRatsScript;
     private SpriteRenderer _spriteRenderer;
@@ -26,6 +25,7 @@ public class Rat : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider2D>();
         _dragRatsScript = DragRats.Instance;
         SetRat();
+        CalculateCheesePerSecond();
     }
 
     void Start()
@@ -35,8 +35,6 @@ public class Rat : MonoBehaviour
 
     void Update()
     {
-        
-        
         UpdateDestination();
         GenerateCheese();
     }
@@ -72,19 +70,22 @@ public class Rat : MonoBehaviour
             _moveTimer = Random.Range(1f, 6f);
         }
     }
-    
+
+    private void CalculateCheesePerSecond()
+    {
+        CheesePerSecond = (Math.Pow(type.BaseCheesePerSecond, tier) + 0.5 * tier);
+    }
     private void GenerateCheese()
     {
         _cheeseTimer -= Time.deltaTime;
 
-        if (!(_moveTimer <= 0)) return;
+        if (!(_cheeseTimer <= 0)) return;
         
         //calculate amount of cheese generated.
-        var cheeseGenerated = (Math.Pow(type.BasePowerPerMinute, tier) + 0.5 * tier) * 10;
+        var cheeseGenerated = CheesePerSecond * 10;
         //Fire On cheese event
         EventManager.OnCheeseGenerated?.Invoke(cheeseGenerated);
-        
-        _moveTimer = 10f;
+        _cheeseTimer = 10f;
     }
     public void SetRat()
     {
@@ -99,5 +100,6 @@ public class Rat : MonoBehaviour
         if (tier + 1 > type.MaxTiers) return;
         tier++;
         SetRat();
+        CalculateCheesePerSecond();
     }
 }
