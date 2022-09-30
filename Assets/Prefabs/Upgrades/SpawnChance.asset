@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SpawnChance
   m_EditorClassIdentifier: 
   timesBought: 0
-  limit: 9
+  buyLimit: 9
   baseCost: 50
   incrementCostFactor: 5
