@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0c28a07ccc4bba9489ca66d6d8809f, type: 3}
+  m_Name: 4_Normal_Radioactive
+  m_EditorClassIdentifier: 
+  timesBought: 0
+  buyLimit: 0
+  baseCost: 580
+  incrementCostFactor: 2.5
+  tier: 4
+  type: {fileID: 11400000, guid: cbd7da585b24b6f43bc15e62d81ec564, type: 2}
