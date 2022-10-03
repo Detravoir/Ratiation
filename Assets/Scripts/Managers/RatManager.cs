@@ -48,7 +48,7 @@ public class RatManager : MonoBehaviour
             yield return new WaitForSeconds(ratSpawnInterval - spawnRateUpgrade.Level);
             if (SpawnedRats.Count < maxRats)
             {
-                var type = Random.Range(0f, 100f) > 100 - 10 * spawnChanceUpgrade.Level ? ratTypes[1] : ratTypes[0];
+                var type = Random.Range(0f, 100f) > 100 - 5 * spawnChanceUpgrade.Level ? ratTypes[1] : ratTypes[0];
                 var tier = Random.Range(1, spawnHigherTierChanceUpgrade.Level + 1);
                 SpawnRat(type, tier);
             };

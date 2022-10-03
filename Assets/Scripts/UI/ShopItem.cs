@@ -2,7 +2,6 @@ using System;
 using Scriptable_Objects;
 using TMPro;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 namespace UI
@@ -53,7 +52,7 @@ namespace UI
                 }
             }
 
-            buyButtonText.text = _cost.ToString();
+            buyButtonText.text = FormatNumber.FormatDouble(_cost);
         }
 
         private void SetButtonColor()
