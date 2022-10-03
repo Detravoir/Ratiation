@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2c17124444acd4c99c285aede14d77, type: 3}
   m_Name: Shiny
   m_EditorClassIdentifier: 
-  baseCheesePerSecond: 1
+  baseCheesePerSecond: 3
   ratSpriteAtlas: {fileID: 4343727234628468602, guid: 8cc1b8c22d8554bd79985d76b586154e, type: 2}
   maxTiers: 30
