@@ -9249,9 +9249,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1699053828411465879, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: m_text
+      value: Spawn Higher Tier
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699053828411465879, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: m_fontSize
+      value: 34.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699053828411465879, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1916684965862162063, guid: 99448eb84624006489af9c30a9695c47, type: 3}
       propertyPath: tierToUnlockAt
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052226965631272977, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052226965631272977, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -838
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896997899575352258, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8515121967295664919, guid: 99448eb84624006489af9c30a9695c47, type: 3}
       propertyPath: thingToBuy
@@ -22438,6 +22462,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -5.25
       objectReference: {fileID: 0}
+    - target: {fileID: 5896997899575352258, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7081675970826426605, guid: 99448eb84624006489af9c30a9695c47, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -28636,6 +28664,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4658114071191632612, guid: 99448eb84624006489af9c30a9695c47, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896997899575352258, guid: 99448eb84624006489af9c30a9695c47, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7081675970826426605, guid: 99448eb84624006489af9c30a9695c47, type: 3}
