@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff0c28a07ccc4bba9489ca66d6d8809f, type: 3}
-  m_Name: 6_Normal_3-Eyed 1
+  m_Name: 16_Normal_Vampire
   m_EditorClassIdentifier: 
   timesBought: 0
   buyLimit: 0
-  baseCost: 1520
+  baseCost: 1638220
   incrementCostFactor: 1.25
-  tier: 6
+  tier: 16
   type: {fileID: 11400000, guid: cbd7da585b24b6f43bc15e62d81ec564, type: 2}

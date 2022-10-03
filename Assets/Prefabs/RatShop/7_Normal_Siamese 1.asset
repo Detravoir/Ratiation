@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 7_Normal_Siamese 1
   m_EditorClassIdentifier: 
   timesBought: 0
-  baseCost: 2470
+  buyLimit: 0
+  baseCost: 3110
   incrementCostFactor: 1.25
   tier: 7
   type: {fileID: 11400000, guid: cbd7da585b24b6f43bc15e62d81ec564, type: 2}
