@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 namespace Scriptable_Objects
@@ -12,7 +11,7 @@ namespace Scriptable_Objects
         public override bool HasBeenBought()
         {
             var ratManager = RatManager.Instance;
-            if (ratManager.spawnedRats.Count >= ratManager.MaxRats) return false;
+            if (ratManager.SpawnedRats.Count >= ratManager.MaxRats) return false;
             timesBought++;
             ratManager.SpawnRat(type, tier);
             return true;

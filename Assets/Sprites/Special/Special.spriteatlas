@@ -45,6 +45,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 7a3b7c5dc18ee48cf8f468d6216a4ec7, type: 3}
   - {fileID: 21300000, guid: 286f1c3ed152d4cb2b00d84a8a3a1c66, type: 3}
   - {fileID: 21300000, guid: 6fa717fef0b32478396f735768442be9, type: 3}
+  - {fileID: 21300000, guid: 5e76ccffc6a05449585eb34bbd1a3bd4, type: 3}
   m_PackedSpriteNamesToIndex:
   - Racoon eyes
   - hand
@@ -53,6 +54,7 @@ SpriteAtlas:
   - Racoon
   - arrow
   - Sparklyrat
+  - Sparkles
   m_RenderDataMap: {}
   m_Tag: Special
   m_IsVariant: 0

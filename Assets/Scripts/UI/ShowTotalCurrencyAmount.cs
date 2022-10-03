@@ -1,7 +1,5 @@
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 namespace UI
 {
@@ -15,7 +13,7 @@ namespace UI
 
         private void Update()
         {
-            _tmpText.text = CurrencyManager.TotalRatPower.ToString();
+            _tmpText.text = FormatNumber.FormatDouble(CurrencyManager.Cheese);
         }
     }
 }

@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Rat King
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 5ae0e72cb73ff47fb8cd3fb9dcf735c9, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2a1ef200e491f449fb32f5e3b3e28e2d, type: 3}
+  - {fileID: 21300000, guid: 2dfd2011647094d62897536699c784c1, type: 3}
+  - {fileID: 21300000, guid: 91fdfc42bb86f42c3b166f1b8fb93b38, type: 3}
+  - {fileID: 21300000, guid: 5b78efd4cf14b427b8cf0130446bbefa, type: 3}
+  - {fileID: 21300000, guid: 20e7d965e48424ca2ae2af6861a95cf8, type: 3}
+  - {fileID: 21300000, guid: a2975d88eac014a32b0f0a9ce8892385, type: 3}
+  - {fileID: 21300000, guid: 9b9257b8dbbe34373b467f385dd7fe07, type: 3}
+  - {fileID: 21300000, guid: b2619a398c6ba49628bb0a3f4d9fca53, type: 3}
+  - {fileID: 21300000, guid: e339449b0f67247cf8bb6fb4b09d39e2, type: 3}
+  - {fileID: 21300000, guid: fa728acee5e3441aeb592e1bf27f800b, type: 3}
+  - {fileID: 21300000, guid: 070f121f3816e432d96b65cdf57307a3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Left Hand
+  - Cape
+  - Neck
+  - Right Ear
+  - Cage
+  - Head
+  - Layer 7
+  - Right Hand
+  - Left Ear
+  - Pinkie
+  - Cheese
+  m_RenderDataMap: {}
+  m_Tag: Rat King
+  m_IsVariant: 0
