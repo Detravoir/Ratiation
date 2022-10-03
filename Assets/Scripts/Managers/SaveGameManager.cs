@@ -12,7 +12,6 @@ public class SaveGameManager : MonoBehaviour
     public double cheese;
     [FormerlySerializedAs("ShopItems")] [SerializeField] private List<CanBeBought> shopItems;
     
-    [SerializeField] private StatisticsManager statisticsManager;
     public double totalCheeseGained = 0;
     public int totalMerges = 0;
     public int highestTierReached = 0;
@@ -111,9 +110,9 @@ public class SaveGameManager : MonoBehaviour
 
     private void SaveStatistics()
     {
-        PlayerPrefs.SetString("TotalCheeseGained", statisticsManager.TotalCheeseGained.ToString(CultureInfo.CurrentCulture));
-        PlayerPrefs.SetInt("TotalMerges", statisticsManager.TotalMerges);
-        PlayerPrefs.SetInt("HighestTierReached", statisticsManager.HighestTierReached);
+        PlayerPrefs.SetString("TotalCheeseGained", StatisticsManager.TotalCheeseGained.ToString(CultureInfo.CurrentCulture));
+        PlayerPrefs.SetInt("TotalMerges", StatisticsManager.TotalMerges);
+        PlayerPrefs.SetInt("HighestTierReached", StatisticsManager.HighestTierReached);
     }
     private void LoadStatistics()
     {

@@ -3,24 +3,23 @@ using UnityEngine;
 public class StatisticsManager : MonoBehaviour
 {
     [SerializeField] private RatManager ratManager;
-    [SerializeField] private int highestTierReached = 1;
-    [SerializeField] private int totalMerges = 0;
-    [SerializeField] private double totalCheeseGained = 0;
-    [SerializeField] private double totalCheesePerSecond;
-    
-    public int HighestTierReached => highestTierReached;
-    public int TotalMerges => totalMerges;
-    public double TotalCheeseGained => totalCheeseGained;
-    public double TotalCheesePerSecond => totalCheesePerSecond;
+
+    public static int HighestTierReached { get; private set; } = 1;
+    public static int TotalMerges { get; private set; } = 0;
+    public static double TotalCheeseGained { get; private set; } = 0;
+    public static double TotalCheesePerSecond { get; private set; }
+
+    private void Update()
+    {
+        CalculateTotalCheesePerSecond();
+    }
 
     private void Awake()
     {
         EventManager.OnGameLoaded += LoadStatistics;
         EventManager.OnRatMerge += CheckHighestTier;
         EventManager.OnRatMerge += AddToTotalMerges;
-        EventManager.OnRatMerge += CalculateTotalCheesePerSecondOnMerge;
         EventManager.OnCheeseGenerated += AddCheeseToTotal;
-        EventManager.OnRatSpawn += CalculateTotalCheesePerSecond;
     }
 
     private void OnDisable()
@@ -28,46 +27,39 @@ public class StatisticsManager : MonoBehaviour
         EventManager.OnGameLoaded -= LoadStatistics;
         EventManager.OnRatMerge -= CheckHighestTier;
         EventManager.OnRatMerge -= AddToTotalMerges;
-        EventManager.OnRatMerge -= CalculateTotalCheesePerSecondOnMerge;
         EventManager.OnCheeseGenerated -= AddCheeseToTotal;
-        EventManager.OnRatSpawn -= CalculateTotalCheesePerSecond;
     }
 
     private void LoadStatistics(SaveGameManager saveGameManager)
     {
-        highestTierReached = saveGameManager.highestTierReached;
-        totalMerges = saveGameManager.totalMerges;
-        totalCheeseGained = saveGameManager.totalCheeseGained;
+        HighestTierReached = saveGameManager.highestTierReached;
+        TotalMerges = saveGameManager.totalMerges;
+        TotalCheeseGained = saveGameManager.totalCheeseGained;
     }
 
     private void CheckHighestTier(int tier)
     {
-        if (tier <= highestTierReached) return;
-        highestTierReached = tier;
+        if (tier <= HighestTierReached) return;
+        HighestTierReached = tier;
     }
 
     private void AddToTotalMerges(int tier)
     {
-        totalMerges++;
+        TotalMerges++;
     }
 
     private void AddCheeseToTotal(double amount)
     {
-        totalCheeseGained += amount;
+        TotalCheeseGained += amount;
     }
 
     private void CalculateTotalCheesePerSecond()
     {
         //reset value
-        totalCheesePerSecond = 0;
+        TotalCheesePerSecond = 0;
         foreach (var rat in ratManager.SpawnedRats)
         {
-            totalCheesePerSecond += rat.CheesePerSecond;
+            TotalCheesePerSecond += rat.CheesePerSecond;
         }
-    }
-    //method to subscribe to the OnRatMerge event.
-    private void CalculateTotalCheesePerSecondOnMerge(int tier)
-    {
-        CalculateTotalCheesePerSecond();
     }
 }
