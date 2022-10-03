@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2c17124444acd4c99c285aede14d77, type: 3}
   m_Name: normal
   m_EditorClassIdentifier: 
-  basePowerPerMinute: 1
+  baseCheesePerSecond: 1
   ratSpriteAtlas: {fileID: 4343727234628468602, guid: 3f965b96c224b409c8aac1d056bbc3ea, type: 2}
-  maxTiers: 10
+  maxTiers: 30

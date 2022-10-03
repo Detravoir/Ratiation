@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1_Normal_Pinky
   m_EditorClassIdentifier: 
   timesBought: 0
+  buyLimit: 0
   baseCost: 20
   incrementCostFactor: 1.25
   tier: 1
