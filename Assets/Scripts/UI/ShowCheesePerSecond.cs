@@ -20,7 +20,7 @@ namespace UI
         //get TotalCheesePerSecond from the StatisticsManager
         private void UpdateCheesePerSecond()
         {
-            _tmpText.text =$"{StatisticsManager.TotalCheesePerSecond} p/s";
+            _tmpText.text =$"{FormatNumber.FormatDouble(StatisticsManager.TotalCheesePerSecond)} p/s";
         }
     }
 }
