@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 374491144064372581}
   - component: {fileID: 374491144064372580}
   m_Layer: 9
-  m_Name: IndexPinkie
+  m_Name: IndexButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
