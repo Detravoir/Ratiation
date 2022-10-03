@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 9_Normal_Skelly
   m_EditorClassIdentifier: 
   timesBought: 0
-  baseCost: 10130
+  buyLimit: 0
+  baseCost: 12690
   incrementCostFactor: 1.25
   tier: 9
   type: {fileID: 11400000, guid: cbd7da585b24b6f43bc15e62d81ec564, type: 2}
