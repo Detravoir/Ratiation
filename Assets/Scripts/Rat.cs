@@ -16,6 +16,7 @@ public class Rat : MonoBehaviour
     private float _moveTimer;
     private float _walkTime;
     private float _cheeseTimer = 10f;
+    private float _walkSpeed;
 
     private Vector3 _destination, _offset;
 
@@ -25,12 +26,11 @@ public class Rat : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider2D>();
         _dragRatsScript = DragRats.Instance;
         SetRat();
-        CalculateCheesePerSecond();
     }
 
     void Start()
     {
-        _moveTimer = Random.Range(1f, 6f);
+        _moveTimer = Random.Range(5f, 15f);
     }
 
     void Update()
@@ -42,7 +42,7 @@ public class Rat : MonoBehaviour
     private void UpdateDestination()
     {
         _moveTimer -= Time.deltaTime;
-        
+
         //Check if the rat is not being dragged
         if (_dragRatsScript.IsDragged) return;
         
@@ -51,9 +51,9 @@ public class Rat : MonoBehaviour
         {
             //Check if the destination is far away enough
             if (Vector3.Distance(transform.position, _destination) > .5f)
-            {                   
+            {             
                 //Move to the destination
-                transform.position = Vector3.MoveTowards(transform.position, _destination, Random.Range(1f, 3f) * Time.deltaTime);                   
+                transform.position = Vector3.MoveTowards(transform.position, _destination, _walkSpeed * Time.deltaTime);                   
             }
             else
             {
@@ -65,9 +65,10 @@ public class Rat : MonoBehaviour
             if (!(_moveTimer <= 0)) return;
             //Get new random destination.
             var bounds = RatManager.Instance.wall.bounds;
-            _destination = new Vector2(Random.Range(bounds.extents.x, (bounds.extents.x * -1)), Random.Range(bounds.extents.y, (bounds.extents.y * -1)));
+            _destination = new Vector2(Random.Range(bounds.extents.x,(bounds.extents.x * -1)), Random.Range(bounds.extents.y, (bounds.extents.y * -1)));
             _hasDestination = true;
-            _moveTimer = Random.Range(1f, 6f);
+            _moveTimer = Random.Range(5f, 15f);
+            _walkSpeed = Random.Range(0.1f, 4f);
         }
     }
 
@@ -87,12 +88,14 @@ public class Rat : MonoBehaviour
         EventManager.OnCheeseGenerated?.Invoke(cheeseGenerated);
         _cheeseTimer = 10f;
     }
+    
     public void SetRat()
     {
         _spriteRenderer.sprite = type.RatSpritesAtlas.GetSprite(tier.ToString());
         _boxCollider.size = _spriteRenderer.sprite.bounds.size;
+        CalculateCheesePerSecond();
     }
-
+    
     public void Evolve()
     {
         //check if tier up isn't greater than maxTiers.

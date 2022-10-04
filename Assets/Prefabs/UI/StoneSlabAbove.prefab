@@ -32,7 +32,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1231710009511884378}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 1231710008836712140}
   - component: {fileID: 1231710008836712141}
   m_Layer: 5
-  m_Name: CheeseIcon
+  m_Name: RatPowerIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -376.00003, y: 18.000244}
+  m_AnchoredPosition: {x: -376.00003, y: 53.090454}
   m_SizeDelta: {x: 215, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1231710008836712140
@@ -245,8 +245,8 @@ RectTransform:
   m_Children:
   - {fileID: 1231710008836712138}
   - {fileID: 2520176413296646638}
-  - {fileID: 3725092141304357458}
   - {fileID: 1231710008618476608}
+  - {fileID: 8874865191396687118}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1445125292075729792
+--- !u!1 &8487723974815781527
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,10 +301,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3725092141304357458}
-  - component: {fileID: 760855577037918095}
-  - component: {fileID: 1789118619150324125}
-  - component: {fileID: 7936390124860463840}
+  - component: {fileID: 8874865191396687118}
+  - component: {fileID: 8961706089166546818}
+  - component: {fileID: 5724335925266377756}
+  - component: {fileID: 2242648756668860462}
   m_Layer: 5
   m_Name: CheesePerSecond
   m_TagString: Untagged
@@ -312,41 +312,41 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &3725092141304357458
+--- !u!224 &8874865191396687118
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445125292075729792}
+  m_GameObject: {fileID: 8487723974815781527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1231710009511884378}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.75, y: -84.95642}
-  m_SizeDelta: {x: 589.5, y: 48.087}
+  m_AnchoredPosition: {x: -375.75, y: -71.04}
+  m_SizeDelta: {x: 214.5, y: 74.07}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &760855577037918095
+--- !u!222 &8961706089166546818
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445125292075729792}
+  m_GameObject: {fileID: 8487723974815781527}
   m_CullTransparentMesh: 1
---- !u!114 &1789118619150324125
+--- !u!114 &5724335925266377756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445125292075729792}
+  m_GameObject: {fileID: 8487723974815781527}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0 p/s
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca8adce90bcf74f49a2b2fbb3a55c9ee, type: 2}
   m_sharedMaterial: {fileID: -897382959985405542, guid: ca8adce90bcf74f49a2b2fbb3a55c9ee, type: 2}
@@ -387,15 +387,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 50.45
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 2048
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -429,13 +429,13 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &7936390124860463840
+--- !u!114 &2242648756668860462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445125292075729792}
+  m_GameObject: {fileID: 8487723974815781527}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9c0daace70344d2ad5de5010465fe72, type: 3}
@@ -450,7 +450,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3742102759913812946, guid: ed10f2a66de8ee043b28718497d4a2fa, type: 3}
       propertyPath: m_Name
-      value: CheeseAmount
+      value: RatPowerNumber
       objectReference: {fileID: 0}
     - target: {fileID: 3742102759913812947, guid: ed10f2a66de8ee043b28718497d4a2fa, type: 3}
       propertyPath: m_Pivot.x
@@ -522,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3742102759913812947, guid: ed10f2a66de8ee043b28718497d4a2fa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 18
+      value: 53.09021
       objectReference: {fileID: 0}
     - target: {fileID: 3742102759913812947, guid: ed10f2a66de8ee043b28718497d4a2fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
