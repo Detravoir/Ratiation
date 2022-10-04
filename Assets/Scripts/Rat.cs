@@ -25,7 +25,6 @@ public class Rat : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider2D>();
         _dragRatsScript = DragRats.Instance;
         SetRat();
-        CalculateCheesePerSecond();
     }
 
     void Start()
@@ -87,12 +86,14 @@ public class Rat : MonoBehaviour
         EventManager.OnCheeseGenerated?.Invoke(cheeseGenerated);
         _cheeseTimer = 10f;
     }
+    
     public void SetRat()
     {
         _spriteRenderer.sprite = type.RatSpritesAtlas.GetSprite(tier.ToString());
         _boxCollider.size = _spriteRenderer.sprite.bounds.size;
+        CalculateCheesePerSecond();
     }
-
+    
     public void Evolve()
     {
         //check if tier up isn't greater than maxTiers.
