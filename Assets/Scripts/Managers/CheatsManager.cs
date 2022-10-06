@@ -7,63 +7,33 @@ using TMPro;
 public class CheatsManager : MonoBehaviour
 {
 
-    public Button confirmButton;
-
     public TMP_InputField cheatsInputField;
     string cheatsInput;
 
     void Start()
     {
-        Button btn = confirmButton.GetComponent<Button>();
-        btn.onClick.AddListener(CheckCheats);
     }
 
-    void CheckCheats()
+    public void CheckCheats()
     {
         cheatsInput = cheatsInputField.text;
 
         if(cheatsInput == "motherload")
         {
-            EventManager.GiveMoney += AddMoney;
+            EventManager.OnCheeseGenerated?.Invoke(1000000000);
             Debug.Log("I AM RICH");
         }
 
         if(cheatsInput == "gottacatchthemall")
         {
-            EventManager.UnlockRatDex += UnlockRatDex;
+            EventManager.OnRatMerge?.Invoke(30);
             Debug.Log("I caught them all!");
-        }
-
-        if( cheatsInput == "salesman")
-        {
-            EventManager.UnlockShop += UnlockShop;
-            Debug.Log("Now i can buy every rat!");
         }
 
         if(cheatsInput == "VERMINTIDE")
         {
-            EventManager.VERMINTIDE += VERMINTIDE;
+            EventManager.VERMINTIDE?.Invoke();
             Debug.Log("VERMINTIDE");
         }
-    }
-
-    private void AddMoney()
-    {
-        // add shit ton of money
-    }
-
-    private void UnlockRatDex()
-    {
-        // Fully unlock the rat dex
-    }
-
-    private void UnlockShop()
-    {
-        // Make every rat availbable in the shop
-    }
-
-    private void VERMINTIDE()
-    {
-        // VERMINTIDE
     }
 }
