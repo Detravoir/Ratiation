@@ -11,7 +11,8 @@ namespace Scriptable_Objects
         public override bool HasBeenBought()
         {
             var ratManager = RatManager.Instance;
-            if (ratManager.SpawnedRats.Count >= ratManager.MaxRats) return false;
+            //Allow to buy more rats than allowed. This is to prevent players from getting stuck.
+            if (ratManager.SpawnedRats.Count >= ratManager.MaxRats + 2) return false;
             timesBought++;
             ratManager.SpawnRat(type, tier);
             return true;
