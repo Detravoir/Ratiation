@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace UI
 {
-    public class ShowOnFirstStartUp : MonoBehaviour
+    public class ShowSceneOnFirstStartUp : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

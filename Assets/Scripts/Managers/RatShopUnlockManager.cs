@@ -8,7 +8,7 @@ namespace UI
             {
                 if (i - 3 >= 0)
                 {
-                    items[i-3].SetActive(true);
+                    itemsToUnlock[i-3].SetActive(true);
                 }
             }
         }

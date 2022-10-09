@@ -1,6 +1,3 @@
-using System;
-using UnityEngine;
-
 namespace UI
 {
     public class IndexUnlockManager : UnlockManager
@@ -9,7 +6,7 @@ namespace UI
         {
             for (var i = 0; i < tier; i++)
             {
-                items[i].SetActive(true);
+                itemsToUnlock[i].SetActive(true);
             }
         }
     }

@@ -1,25 +1,15 @@
-
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseUserInput : UserInput
 {
     public override bool Down()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            return true;
-        }
-        return false;
+        return Input.GetMouseButtonDown(0);
     }
 
     public override bool Up()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            return true;
-        }
-        return false;
+        return Input.GetMouseButtonUp(0);
     }
 
     public override bool Pressed()

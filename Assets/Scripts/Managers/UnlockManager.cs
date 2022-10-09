@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI
 {
     public abstract class UnlockManager : MonoBehaviour
     {
-        [SerializeField] protected GameObject[] items;
+        [FormerlySerializedAs("items")] [SerializeField] protected GameObject[] itemsToUnlock;
         
         private void Awake()
         {
