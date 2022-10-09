@@ -80,10 +80,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ratManager: {fileID: 4564294576546275526}
-  highestTierReached: 1
-  totalMerges: 0
-  totalCheeseGained: 0
-  cheesePerSecond: 0
 --- !u!1 &2939730739592428333
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +128,6 @@ MonoBehaviour:
   shopItems:
   - {fileID: 11400000, guid: b2444642c3250b1488768be5b6e37d70, type: 2}
   - {fileID: 11400000, guid: b0e33bef26445964f8a658b773a9420e, type: 2}
-  statisticsManager: {fileID: 6458509243407304714}
   totalCheeseGained: 0
   totalMerges: 0
   highestTierReached: 0
