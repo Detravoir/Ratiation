@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCheesePerSecond: 3
   ratSpriteAtlas: {fileID: 4343727234628468602, guid: 3f965b96c224b409c8aac1d056bbc3ea, type: 2}
-  maxTiers: 30
+  maxTiers: 50
