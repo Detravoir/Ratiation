@@ -52,6 +52,7 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: e0ab2d20c739c459b823c57a4fac7f77, type: 3}
   - {fileID: 21300000, guid: 0a767e60270e246cf8baec119520adb4, type: 3}
+  - {fileID: 21300000, guid: 5d18c8e0a929b4102bcf72e8ffc63a03, type: 3}
   - {fileID: 21300000, guid: 82c889e08bd2f4334b352ef5b59d81de, type: 3}
   - {fileID: 21300000, guid: 7e6e190100f624339bc89c268074c5ae, type: 3}
   - {fileID: 21300000, guid: dcfbd32126c654dacb52b07807893538, type: 3}
@@ -59,6 +60,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: a8f9eb816c27248b69691e0f3eed129f, type: 3}
   - {fileID: 21300000, guid: 1b7b69c1ba592460798ff0bfc0c2d4ab, type: 3}
   - {fileID: 21300000, guid: c121e2e1a539948dfaf93833fb7e12c5, type: 3}
+  - {fileID: 21300000, guid: 7889b52240ecd455b883d0031057761f, type: 3}
   - {fileID: 21300000, guid: 3ed370421d2b04a19b3ea002dfe4d226, type: 3}
   - {fileID: 21300000, guid: 5dfcba721dc5f4378a0184cbfc136a89, type: 3}
   - {fileID: 21300000, guid: 4b60c28265b304215a3f3e7e15e91bdb, type: 3}
@@ -71,17 +73,23 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d4539cf4773de4c2499984936a0d053e, type: 3}
   - {fileID: 21300000, guid: 42b96f05ffd734dab87a3f8bdcd0b0fb, type: 3}
   - {fileID: 21300000, guid: a92ceda5949fd46ce8c2b6db11868a08, type: 3}
+  - {fileID: 21300000, guid: 0c5196b5e8f0541248013ea42f7d68ce, type: 3}
   - {fileID: 21300000, guid: 3c713ce5673154b7ab2868c2498a2a6a, type: 3}
   - {fileID: 21300000, guid: 1f6dd2f52204d4121b152e3c2ab4e855, type: 3}
   - {fileID: 21300000, guid: 20b818668ef7149dba8899fb2fb8f55f, type: 3}
   - {fileID: 21300000, guid: 4d3e6c6652f454a14aaa088fa362fa5a, type: 3}
+  - {fileID: 21300000, guid: 404d86c6b859b40faa5378422a8d98b2, type: 3}
+  - {fileID: 21300000, guid: 4e962117274ce41a0859114cd8530e7b, type: 3}
+  - {fileID: 21300000, guid: 233e58f785ac0429c91cf079624ae0eb, type: 3}
   - {fileID: 21300000, guid: 8b0e1408dc8fc43708b0ab0021474a5e, type: 3}
   - {fileID: 21300000, guid: bc5afc486680d4fc2a669b432c266b23, type: 3}
+  - {fileID: 21300000, guid: 02a3aaa8ebba545f3a35c4cd51cb75f5, type: 3}
   - {fileID: 21300000, guid: f4485dd87a1114cb8adeef12dfe14d70, type: 3}
   - {fileID: 21300000, guid: 7afbd0e85b3c44916b853a4fea27ad6d, type: 3}
   - {fileID: 21300000, guid: 7361ac195c8884473bca4c48e04d2100, type: 3}
   - {fileID: 21300000, guid: e22d28f9f74e74794bff8ac47e96ba31, type: 3}
   - {fileID: 21300000, guid: 4660acea1de584a8abcc1811af3d77a5, type: 3}
+  - {fileID: 21300000, guid: 6afb541bf122949a69500504714d7e0e, type: 3}
   - {fileID: 21300000, guid: 6f50793b713e7458db5126bcd061c9c7, type: 3}
   - {fileID: 21300000, guid: aa462bab39653480f904362d1648611d, type: 3}
   - {fileID: 21300000, guid: 3c195dcb23026407597c3bba69f4ca71, type: 3}
@@ -95,13 +103,15 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - 21
   - 25
+  - 47
   - 7
-  - 36_Wizard_Rat
+  - 36
   - 24
   - 22
   - 20
   - 12
-  - 41_Dragon_Rat
+  - 41
+  - 50
   - 13
   - 15
   - 29
@@ -112,29 +122,35 @@ SpriteAtlas:
   - 6
   - 2
   - 16
-  - 35_Worm_Rat
-  - 34_Clown_Rat
+  - 35
+  - 34
+  - 46
   - 17
   - 26
-  - 38_Warrior_Rat
+  - 38
   - 30
+  - 48
+  - 45
+  - 44
   - 1
   - 10
+  - 43
   - 4
-  - 39_Normie_Rat
+  - 39
   - 23
-  - 31_Cactus_Rat
-  - 42_Cyclops_Rat
-  - 37_Witch_Rat
+  - 31
+  - 42
+  - 49
+  - 37
   - 18
   - 9
   - 19
-  - 32_Lover_Rat
-  - 33_Lonely_Rat
+  - 32
+  - 33
   - 5
   - 14
   - 8
-  - 40_Goblin_Rat
+  - 40
   m_RenderDataMap: {}
   m_Tag: Rats
   m_IsVariant: 0

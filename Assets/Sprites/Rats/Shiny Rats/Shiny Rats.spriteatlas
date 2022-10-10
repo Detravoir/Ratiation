@@ -50,11 +50,14 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 2f2d8500b21fb44c8ae8d89c36045e7a, type: 3}
   - {fileID: 21300000, guid: 18f9e2b050e2f4a0686f42af446070a8, type: 3}
   - {fileID: 21300000, guid: 3a87d6015d14b479685028fb321b1a4b, type: 3}
+  - {fileID: 21300000, guid: 422984313445b4f0faa37e54a693c2ca, type: 3}
   - {fileID: 21300000, guid: 6235ce61ac9454296b66b7bdc3c72914, type: 3}
   - {fileID: 21300000, guid: a302e9811f2144ae69a0e484268dd3bf, type: 3}
   - {fileID: 21300000, guid: 491492c1851f746b7b18af5fc6855e44, type: 3}
+  - {fileID: 21300000, guid: f1c9e9c173a684e079e88ef4495b14d5, type: 3}
   - {fileID: 21300000, guid: 5acb11e1a5a80460490ee6465aaad992, type: 3}
   - {fileID: 21300000, guid: e15dd3122cf5b471c9cd7411e43fc591, type: 3}
   - {fileID: 21300000, guid: e5b4690322b844f2a85d813b2e02b41d, type: 3}
@@ -63,6 +66,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 15177334b16fa4027b08a7012ae932fa, type: 3}
   - {fileID: 21300000, guid: a9fa6a34b42b740dd86b956fbf1a261a, type: 3}
   - {fileID: 21300000, guid: 35354644852884f10bbae9b08fa1de72, type: 3}
+  - {fileID: 21300000, guid: ef900884dcb714d408002e891a25c0f0, type: 3}
   - {fileID: 21300000, guid: 87f39bf5256854e0cac813c8183db374, type: 3}
   - {fileID: 21300000, guid: 74df7fc6c8e834ad69e394f6f35420e4, type: 3}
   - {fileID: 21300000, guid: 26d92cf6693284ebb90c21fdd0094831, type: 3}
@@ -74,6 +78,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 3a0e2cb88ffa9451db24921487b24aa9, type: 3}
   - {fileID: 21300000, guid: 5c422cf816a73487497156ac9e81ba74, type: 3}
   - {fileID: 21300000, guid: bde37f69fd4264ec0bebd4ca8c9b69b0, type: 3}
+  - {fileID: 21300000, guid: b3f0fa8935deb4b48bbb4eeac4f23315, type: 3}
   - {fileID: 21300000, guid: bfb72dd94be114808a6b47d193e46b30, type: 3}
   - {fileID: 21300000, guid: 6bf107e936ebb4dca8f6e0871e473122, type: 3}
   - {fileID: 21300000, guid: deccb91a327d3415a95f515ea8cfb695, type: 3}
@@ -83,57 +88,68 @@ SpriteAtlas:
   - {fileID: 21300000, guid: aca91f6cc4f2049a1a5c95ead93cb657, type: 3}
   - {fileID: 21300000, guid: 057fd67ce1be544c6a8f7fb91e065655, type: 3}
   - {fileID: 21300000, guid: 10801bdc37eef4f4a849cd84bf7b5157, type: 3}
+  - {fileID: 21300000, guid: 48b3ea0de14764b0db1beaf9dd36b8dc, type: 3}
   - {fileID: 21300000, guid: 5c76a86d2b4314711b433130566e99fa, type: 3}
   - {fileID: 21300000, guid: c6b6d87dd874e407e88c6221e5d8bdc7, type: 3}
+  - {fileID: 21300000, guid: a0a6da7df30354e7fb91fd52081c75a9, type: 3}
   - {fileID: 21300000, guid: 2c27d18d84e334eba8beea5f46bfcbff, type: 3}
   - {fileID: 21300000, guid: 3806ce0ed180c40598df6e909716ba01, type: 3}
   - {fileID: 21300000, guid: 0336d71eb02fd4766927af8a16fb904d, type: 3}
   - {fileID: 21300000, guid: 203e54ae9018d4198affb02f1b83176a, type: 3}
   - {fileID: 21300000, guid: 8e2fc47ff417a4245bb487d0e6b77beb, type: 3}
+  - {fileID: 21300000, guid: e1dd5aaf97dd44c78adac5d3147f4997, type: 3}
   - {fileID: 21300000, guid: 1216b9cf27e0940bbade8afc424bc6db, type: 3}
   - {fileID: 21300000, guid: 1239accfe52ca4c049158eb0eff46f91, type: 3}
   m_PackedSpriteNamesToIndex:
-  - 33_Shiny_Lonely
-  - 34_Shiny_Clown
+  - 45
+  - 33
+  - 34
+  - 49
   - 11
   - 10
   - 16
+  - 46
   - 9
   - 8
   - 15
-  - 38_Shiny_Warrior
+  - 38
   - 29
   - 7
-  - 35_Shiny_Worm
+  - 35
   - 14
+  - 50
   - 2
   - 12
-  - 32_Shiny_Lover
+  - 32
   - 30
   - 4
   - 23
   - 5
   - 25
   - 13
-  - 37_Shiny_Witch
+  - 37
   - 21
-  - 36_Shiny_Wizard
+  - 47
+  - 36
   - 6
-  - 41_Shiny_Dragon
+  - 41
   - 24
   - 20
   - 3
   - 1
   - 26
   - 19
+  - 43
   - 28
   - 17
+  - 44
   - 18
   - 27
-  - 31_Shiny_Cactus
-  - 40_Shiny_Goblin
-  - 42_Shiny_Cyclops
-  - 39_Shiny_Normie
+  - 31
+  - 40
+  - 42
+  - 48
+  - 39
   - 22
   m_RenderDataMap: {}
   m_Tag: Shiny Rats
