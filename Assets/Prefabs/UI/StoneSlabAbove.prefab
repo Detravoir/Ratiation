@@ -448,6 +448,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1231710009511884378}
     m_Modifications:
+    - target: {fileID: 3742102759913812944, guid: ed10f2a66de8ee043b28718497d4a2fa, type: 3}
+      propertyPath: m_fontSize
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742102759913812944, guid: ed10f2a66de8ee043b28718497d4a2fa, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3742102759913812946, guid: ed10f2a66de8ee043b28718497d4a2fa, type: 3}
       propertyPath: m_Name
       value: RatPowerNumber

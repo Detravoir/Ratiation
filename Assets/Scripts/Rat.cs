@@ -79,19 +79,20 @@ public class Rat : MonoBehaviour
     private void GenerateCheese()
     {
         _cheeseTimer -= Time.deltaTime;
-
         if (!(_cheeseTimer <= 0)) return;
         
         //calculate amount of cheese generated.
-        var cheeseGenerated = CheesePerSecond * 10;
-        //Fire On cheese event
+        var cheeseGenerated = CheesePerSecond * 10; //times 10 because timer is every 10 seconds.
+        //Fire On cheese event and pass amount of cheese generated.
         EventManager.OnCheeseGenerated?.Invoke(cheeseGenerated);
         _cheeseTimer = 10f;
     }
-    
+    //sets the rats sprite and collider size.
     public void SetRat()
     {
+        //get the sprite from the sprite atlas
         _spriteRenderer.sprite = type.RatSpritesAtlas.GetSprite(tier.ToString());
+        //set collider size to the size of the sprite.
         _boxCollider.size = _spriteRenderer.sprite.bounds.size;
         CalculateCheesePerSecond();
     }

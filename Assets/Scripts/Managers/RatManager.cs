@@ -17,6 +17,7 @@ public class RatManager : MonoBehaviour
     [SerializeField] private UpgradeType spawnChanceUpgrade;
     [SerializeField] private UpgradeType spawnHigherTierChanceUpgrade;
     [SerializeField] private int maxRats = 16;
+    private bool _vermintideActive = false;
 
     public List<Rat> SpawnedRats { get; private set; }
     public int MaxRats => maxRats;
@@ -34,18 +35,20 @@ public class RatManager : MonoBehaviour
         Instance = this;
         _spawnRatCoroutine = StartCoroutine(SpawnRatTimer());
         SpawnedRats = new List<Rat>();
+        EventManager.VERMINTIDE += UnleashTheVermintide;
     }
 
     private void OnDisable()
     {
         StopCoroutine(_spawnRatCoroutine);
+        EventManager.VERMINTIDE -= UnleashTheVermintide;
     }
     
     private IEnumerator SpawnRatTimer()
     {
         while (true)
         {
-            yield return new WaitForSeconds(ratSpawnInterval - spawnRateUpgrade.Level);
+            yield return new WaitForSeconds(_vermintideActive ? 1 : ratSpawnInterval - spawnRateUpgrade.Level);
             if (SpawnedRats.Count < maxRats)
             {
                 var type = Random.Range(0f, 100f) > 100 - 5 * spawnChanceUpgrade.Level ? ratTypes[1] : ratTypes[0];
@@ -80,5 +83,11 @@ public class RatManager : MonoBehaviour
     public void SpawnLoadedRat(int type, int tier)
     {
         SpawnRat(RatTypes[type], tier);
+    }
+
+    private void UnleashTheVermintide()
+    {
+        maxRats = 100;
+        _vermintideActive = true;
     }
 }

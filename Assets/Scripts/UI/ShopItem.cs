@@ -16,7 +16,13 @@ namespace UI
 
         private void Awake()
         {
+            EventManager.OnGameLoaded += GameLoaded;
             CalculateCost();
+        }
+
+        private void OnDisable()
+        {
+            EventManager.OnGameLoaded -= GameLoaded;
         }
 
         private void Update()
@@ -73,10 +79,15 @@ namespace UI
             {
                 if (thingToBuy.TimesBought + 1 > thingToBuy.BuyLimit) return false;
             }
-            //Check if cost is not higher then current amount of RatPower.
+            //Check if cost is not higher then current amount of Cheese.
             if (_cost > CurrencyManager.Cheese) return false;
             
             return true;
+        }
+
+        private void GameLoaded(SaveGameManager saveGameManager)
+        {
+            CalculateCost();
         }
     }
 }
